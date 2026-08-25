@@ -1,10 +1,11 @@
 $ErrorActionPreference = 'Stop'
 
 Set-Location $PSScriptRoot
-$projects = Get-Content -Raw projects.json | ConvertFrom-Json
+$catalogPath = Join-Path $PSScriptRoot 'all-projects\projects.json'
+$projects = Get-Content -Raw $catalogPath | ConvertFrom-Json
 $missingProjects = @(
   $projects | ForEach-Object {
-    if (-not (Test-Path (Join-Path (Split-Path $PSScriptRoot -Parent) $_.directory))) {
+    if (-not (Test-Path (Join-Path $PSScriptRoot (Join-Path 'all-projects' $_.directory)))) {
       $_.directory
     }
   }

@@ -12,7 +12,7 @@ A simple multilingual static company website for a software development business
 - `index.html` — page structure
 - `styles.css` — design and layout
 - `script.js` — language switching
-- `projects.json` — central project catalog shown on the site
+- `all-projects/projects.json` — central project catalog shown on the site
 - `update-site.ps1` — validates the catalog and deploys the site to Firebase
 
 ## Local preview
@@ -30,7 +30,7 @@ http://localhost:8000
 
 ## Updating the project catalog
 
-Add a project object to `projects.json`, including its folder, description, technologies, and optional public URL. Then run this from PowerShell:
+Add a project folder under `all-projects`, then add its object to `all-projects/projects.json`, including its description, icon, technologies, and optional public URL. Then run this from PowerShell:
 
 ```powershell
 .\update-site.ps1

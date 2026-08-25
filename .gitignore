@@ -64,6 +64,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+*service-account*.json
+*firebase-adminsdk*.json
+.vscode/*firebase*.json
 
 # dataconnect generated files
 .dataconnect

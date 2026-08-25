@@ -469,6 +469,15 @@ h1 {
   font-size: 1.45rem;
 }
 
+.project-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 .project-title-link:hover,
 .project-title-link:focus-visible {
   color: var(--primary);

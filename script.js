@@ -191,17 +191,21 @@ function renderProjects(lang = 'en') {
   }
 
   const technologiesLabel = translations[lang]?.projectTechnologies || translations.en.projectTechnologies;
+  const getTechnologies = (technologies) => Array.isArray(technologies)
+    ? technologies
+    : Object.values(technologies || {}).flat();
   projectsGrid.innerHTML = projects.map((project, index) => `
     <article class="project-card" style="--project-index: ${index}">
       <div class="project-card-top">
         <span class="project-number">0${index + 1}</span>
         <span class="project-category">${project.category}</span>
       </div>
+      ${project.icon ? `<img class="project-icon" src="${project.icon}" alt="" loading="lazy" />` : ''}
       <h3>${project.url ? `<a class="project-title-link" href="${project.url}">${project.name}<span aria-hidden="true"> ↗</span></a>` : project.name}</h3>
       <p>${project.description}</p>
       <div class="project-tech">
         <span class="project-tech-label">${technologiesLabel}</span>
-        <div class="tech-list">${project.technologies.map((technology) => `<span>${technology}</span>`).join('')}</div>
+        <div class="tech-list">${getTechnologies(project.technologies).map((technology) => `<span>${technology}</span>`).join('')}</div>
       </div>
     </article>
   `).join('');
@@ -209,7 +213,7 @@ function renderProjects(lang = 'en') {
 
 async function loadProjects() {
   try {
-    const response = await fetch('projects.json');
+    const response = await fetch('all-projects/projects.json');
     if (!response.ok) {
       throw new Error(`Projects request failed: ${response.status}`);
     }

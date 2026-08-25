@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Job Finder AI",
+    "directory": "job-finder",
+    "icon": "all-projects/job-finder/logo.png",
+    "logo": "all-projects/job-finder/logo.png",
+    "category": "Tailored job search and application suite",
+    "description": "An AI-powered platform that finds relevant roles, analyzes your resume, and creates tailored application materials — cover letters, CV suggestions, match scores, and LinkedIn Easy Apply automation.",
+    "url": "https://job-finder.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/job-finder",
+    "status": "live",
+    "lastDeployedVersion": "fbe0eeb",
+    "lastDeployedAt": "2026-08-25",
+    "server": {
+      "host": "job-finder.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux 8.9",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on push to master (git pull + docker compose up -d --build); backend/.env written from the BACKEND_ENV_FILE secret before each build",
+      "persistentData": "backend/data/ (TinyDB db.json, LinkedIn browser sessions, logs/app.log) — Docker-volume-mounted, survives redeploys"
+    },
+    "technologies": {
+      "frontend": ["React", "TypeScript", "Vite"],
+      "backend": ["Python", "FastAPI", "Uvicorn", "TinyDB", "Playwright", "ReportLab", "pypdf"],
+      "ai": ["Gemini 2.5 Flash", "Claude", "Groq", "Ollama"],
+      "integrations": ["LinkedIn OAuth", "LinkedIn Easy Apply automation", "Gmail OAuth", "JSearch (RapidAPI)", "Adzuna", "Arbetsformedlingen"],
+      "observability": ["Central rotating log file", "Sentry (optional)"],
+      "infra": ["Docker", "Docker Compose", "VPS (persistent volume required)"],
+      "mobile": ["Expo", "React Native"]
+    }
+  }
+]
