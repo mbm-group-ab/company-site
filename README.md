@@ -41,6 +41,11 @@ The script checks that each listed project folder exists and deploys the updated
 ## Hosting
 Upload all files from this folder to the root of your static hosting account, such as cPanel, Netlify, Vercel static export, or any simple web host.
 
+### Automatic Firebase deployment
+The GitHub Actions workflow in `.github/workflows/deploy-firebase.yml` deploys Firebase Hosting after every push to `main`. It can also be started manually from the Actions tab.
+
+For the workflow to authenticate, add a repository secret named `FIREBASE_SERVICE_ACCOUNT` containing a Google Cloud service-account JSON key with permission to deploy Firebase Hosting. Never commit this JSON key to the repository.
+
 ## Domains
 This site is prepared to work for:
 - mbm-family.ir
