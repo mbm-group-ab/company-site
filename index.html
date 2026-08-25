@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MBM Software Development — modern web, mobile, and digital business solutions for startups and growing companies."
+    />
+    <title>MBM Software Development</title>
+    <link rel="icon" type="image/png" href="mbm-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" aria-label="MBM home">
+          <img class="brand-logo" src="mbm-logo.png" alt="MBM Group AB" />
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#process" data-i18n="nav.process">Process</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="lang-switcher" aria-label="Language selector">
+          <button type="button" class="lang-trigger" id="language-trigger" aria-haspopup="listbox" aria-expanded="false">
+            EN
+          </button>
+          <ul class="lang-menu" id="language-menu" role="listbox" aria-label="Select language">
+            <li><button type="button" class="lang-option active" data-lang="en" role="option" aria-selected="true">EN</button></li>
+            <li><button type="button" class="lang-option" data-lang="fa" role="option" aria-selected="false">FA</button></li>
+            <li><button type="button" class="lang-option" data-lang="sv" role="option" aria-selected="false">SV</button></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="eyebrow">Software Development Company</p>
+            <h1 data-i18n="heroTitle">Smart digital solutions that move your business forward.</h1>
+            <p class="lead" data-i18n="heroText">
+              We design and build practical websites, mobile apps, and digital platforms for ambitious businesses.
+            </p>
+            <div class="cta-group">
+              <a class="btn btn-primary" href="#contact" data-i18n="ctaPrimary">Book a consultation</a>
+              <a class="btn btn-secondary" href="#services" data-i18n="ctaSecondary">Explore services</a>
+            </div>
+
+            <ul class="hero-stats" aria-label="Company metrics">
+              <li>
+                <strong>1</strong>
+                <span data-i18n="statProjects">Featured product</span>
+              </li>
+              <li>
+                <strong>New</strong>
+                <span data-i18n="statExperience">Company stage</span>
+              </li>
+              <li>
+                <strong>1:1</strong>
+                <span data-i18n="statSupport">Direct support</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="MBM dashboard preview">
+            <div class="dashboard-card main-card">
+              <div class="card-header">
+                <span class="dot dot-green"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-red"></span>
+              </div>
+
+              <div class="card-body">
+                <div class="metric-row">
+                  <span data-i18n="metricLaunch">Product status</span>
+                  <strong data-i18n="metricLaunchValue">Live</strong>
+                </div>
+                <div class="bar-group">
+                  <span class="bar bar-wide"></span>
+                  <span class="bar bar-mid"></span>
+                  <span class="bar bar-short"></span>
+                </div>
+
+                <div class="mini-grid">
+                  <div>
+                    <small data-i18n="metricWeb">Current focus</small>
+                    <b>AI</b>
+                  </div>
+                  <div>
+                    <small data-i18n="metricMobile">Company stage</small>
+                    <b>Early</b>
+                  </div>
+                  <div>
+                    <small data-i18n="metricBrand">Support</small>
+                    <b>Direct</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-top">
+              <span data-i18n="badgeStrategy">Strategy</span>
+              <strong>UX-first</strong>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <span data-i18n="badgeDelivery">Delivery</span>
+              <strong>Fast & reliable</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="servicesEyebrow">What we do</p>
+            <h2 data-i18n="servicesTitle">Tech solutions built around your growth.</h2>
+          </div>
+
+          <div class="cards-grid"><!-- Services -->
+            <article class="service-card">
+              <div class="icon">01</div>
+              <h3 data-i18n="service1Title">Custom web development</h3>
+              <p data-i18n="service1Text">Responsive business websites, landing pages, e-commerce storefronts, and portals tailored to your goals.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">02</div>
+              <h3 data-i18n="service2Title">Mobile app development</h3>
+              <p data-i18n="service2Text">Clean, user-focused mobile experiences for Android and iOS that feel fast and dependable.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">03</div>
+              <h3 data-i18n="service3Title">UI/UX design</h3>
+              <p data-i18n="service3Text">Clear interfaces, conversion-focused journeys, and design systems that support your business growth.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">04</div>
+              <h3 data-i18n="service4Title">System integration</h3>
+              <p data-i18n="service4Text">Connect your tools and workflows with secure, scalable integrations that improve day-to-day operations.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">05</div>
+              <h3 data-i18n="service5Title">Maintenance & support</h3>
+              <p data-i18n="service5Text">Performance optimization, updates, monitoring, and reliable support to keep your digital products healthy.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="icon">06</div>
+              <h3 data-i18n="service6Title">Consulting</h3>
+              <p data-i18n="service6Text">Product planning, architecture guidance, and technical strategy for teams that need a clear roadmap.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section muted-section">
+        <div class="container about-wrap">
+          <div>
+            <p class="eyebrow" data-i18n="aboutEyebrow">Why MBM</p>
+            <h2 data-i18n="aboutTitle">A dependable technology partner for modern businesses.</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 data-i18n="feature1Title">Business-first mindset</h3>
+              <p data-i18n="feature1Text">We focus on outcomes that matter: traffic, engagement, conversions, automation, and efficient operations.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="feature2Title">Clear communication</h3>
+              <p data-i18n="feature2Text">Transparent project updates, structured planning, and realistic timelines from day one.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="feature3Title">Scalable execution</h3>
+              <p data-i18n="feature3Text">We build with flexibility in mind so your product can grow without friction as your company expands.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="projectsEyebrow">Selected work</p>
+            <h2 data-i18n="projectsTitle">Projects built with purpose.</h2>
+            <p class="section-intro" data-i18n="projectsText">A small selection of products and digital tools from MBM.</p>
+          </div>
+          <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="processEyebrow">How we work</p>
+            <h2 data-i18n="processTitle">A simple, practical process.</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="step">01</span>
+              <div>
+                <h3 data-i18n="step1Title">Discovery</h3>
+                <p data-i18n="step1Text">We learn your goals, audience, and constraints to define the right solution.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="step">02</span>
+              <div>
+                <h3 data-i18n="step2Title">Design & plan</h3>
+                <p data-i18n="step2Text">We create structure, user flows, and a visual direction that supports the product strategy.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="step">03</span>
+              <div>
+                <h3 data-i18n="step3Title">Development</h3>
+                <p data-i18n="step3Text">We build the product with clean code, continuous quality checks, and measurable milestones.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="step">04</span>
+              <div>
+                <h3 data-i18n="step4Title">Launch & optimize</h3>
+                <p data-i18n="step4Text">We deploy, monitor performance, and improve based on feedback and real usage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section cta-band">
+        <div class="container contact-box">
+          <div>
+            <p class="eyebrow" data-i18n="contactEyebrow">Start a project</p>
+            <h2 data-i18n="contactTitle">Let’s build something useful together.</h2>
+            <p data-i18n="contactText">Whether you need a better website, an app, or a complete digital product, we are ready to help.</p>
+          </div>
+
+          <div class="contact-details">
+            <span class="contact-label" data-i18n="emailLabel">Email us</span>
+            <a href="mailto:info@mbm-group.se">info@mbm-group.se</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 MBM Software Development</p>
+        <p data-i18n="footerNote">Built for growth, designed for people.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
