@@ -28,5 +28,30 @@
       "infra": ["Docker", "Docker Compose", "VPS (persistent volume required)"],
       "mobile": ["Expo", "React Native"]
     }
+  },
+  {
+    "name": "Media Checker",
+    "directory": "media-checker",
+    "icon": "all-projects/media-checker/logo.png",
+    "logo": "all-projects/media-checker/logo.png",
+    "category": "Photo and video date auditing tool",
+    "description": "Scans a photo/video library and predicts which date Google Photos will sort each file under, flagging files with missing or mismatched EXIF dates before upload. Reads camera/lens details, exposure settings, resolution, and GPS location where available.",
+    "url": "https://media-checker.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/media-checker",
+    "status": "live",
+    "lastDeployedVersion": "ad54ccd",
+    "lastDeployedAt": "2026-08-27",
+    "server": {
+      "host": "media-checker.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on push to master (git pull or first-time git clone, then docker compose up -d --build)",
+      "persistentData": "none - stateless; uploads are scanned into a temp folder and discarded after each request"
+    },
+    "technologies": {
+      "backend": ["Python", "Flask", "Pillow", "gunicorn", "ffprobe (FFmpeg)"],
+      "infra": ["Docker", "Docker Compose", "VPS"]
+    }
   }
 ]
