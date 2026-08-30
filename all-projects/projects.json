@@ -53,5 +53,31 @@
       "backend": ["Python", "Flask", "Pillow", "gunicorn", "ffprobe (FFmpeg)"],
       "infra": ["Docker", "Docker Compose", "VPS"]
     }
+  },
+  {
+    "name": "SahamYar",
+    "directory": "sahamyar",
+    "icon": "all-projects/sahamyar/logo.png",
+    "logo": "all-projects/sahamyar/logo.png",
+    "category": "Multi-broker portfolio and market analysis dashboard",
+    "description": "Reads portfolio and market data across brokerages (Mofid, Avanza) into one dashboard, with momentum/rebound signal generation and a manual-confirm trading flow for Avanza that requires an explicit Confirm click per order — no automated order placement.",
+    "url": "https://sahamyar.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/sahamyar",
+    "status": "live",
+    "lastDeployedVersion": "f37182e",
+    "lastDeployedAt": "2026-08-30",
+    "server": {
+      "host": "sahamyar.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on push to main (git pull or first-time git clone, then docker compose up -d --build)",
+      "persistentData": "data/ (SQLite DB, Mofid/Avanza Playwright session state) — Docker-volume-mounted, survives redeploys; session files are seeded from an interactive local login since the server can't solve login captchas itself"
+    },
+    "technologies": {
+      "backend": ["Python", "Flask", "gunicorn", "Playwright", "APScheduler", "SQLite"],
+      "integrations": ["Google OAuth", "Mofid Trader (easytrader.ir)", "Avanza", "Telegram Bot API"],
+      "infra": ["Docker", "Docker Compose", "VPS"]
+    }
   }
 ]

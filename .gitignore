@@ -1,3 +1,6 @@
+# SSH deploy key + GitHub PATs for the org's VPS projects - never commit
+all-projects/vps-key/
+
 # Logs
 logs
 *.log
