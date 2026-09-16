@@ -79,5 +79,53 @@
       "integrations": ["Google OAuth", "Mofid Trader (easytrader.ir)", "Avanza", "Telegram Bot API"],
       "infra": ["Docker", "Docker Compose", "VPS"]
     }
+  },
+  {
+    "name": "DupliCompare",
+    "directory": "duplicompare",
+    "icon": "all-projects/duplicompare/logo.png",
+    "logo": "all-projects/duplicompare/logo.png",
+    "category": "Cross-platform folder comparison and duplicate finder",
+    "description": "A free, cross-platform GUI app that compares two folders recursively by file name and size and generates an HTML diff report, and scans any folder for duplicate files (by size + MD5 content hash) letting you review each duplicate group side by side — delete, rename, or move any copy right from the app.",
+    "url": "https://duplicompare.mbm-group.se",
+    "repository": "https://github.com/mbm-group-ab/DupliCompare",
+    "status": "live",
+    "server": {
+      "host": "duplicompare.mbm-group.se",
+      "reverseProxy": "Firebase Hosting",
+      "deploy": "GitHub Actions on push to main deploys the landing page to Firebase Hosting (site duplicompare); pushing a version tag (v*.*.*) builds and publishes the Windows/macOS/Linux executables to a GitHub Release",
+      "persistentData": "none - static landing page; app itself is a standalone desktop executable, no server-side state"
+    },
+    "technologies": {
+      "desktop": ["Python", "Tkinter", "PyInstaller"],
+      "infra": ["Firebase Hosting", "GitHub Actions"]
+    }
+  },
+  {
+    "name": "Media Downloader",
+    "directory": "media-downloader",
+    "icon": "all-projects/media-downloader/logo.png",
+    "logo": "all-projects/media-downloader/logo.png",
+    "category": "Multi-platform media downloader and forwarder",
+    "description": "Downloads video, audio, and photo posts from any yt-dlp-supported link (YouTube, Instagram, TikTok, X, and hundreds more) and delivers the file via a browser, a Telegram bot, or a WhatsApp group — with a multi-user WhatsApp sender where each visitor links their own account.",
+    "url": "https://media-downloader.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/media-downloader",
+    "status": "live",
+    "lastDeployedVersion": "46a4c3f",
+    "lastDeployedAt": "2026-09-16",
+    "server": {
+      "host": "media-downloader.mbm-group.se, media-sender.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on push to main (git pull or first-time git clone via a short-lived GitHub App installation token, then docker compose up -d --build)",
+      "persistentData": "runtime/sender/ (WhatsApp Baileys sessions + per-session contacts, one per linked browser) — Docker-volume-mounted, survives redeploys"
+    },
+    "technologies": {
+      "backend": ["Python", "Flask", "gunicorn", "python-telegram-bot", "yt-dlp"],
+      "whatsapp": ["Node.js", "Express", "Baileys"],
+      "integrations": ["Telegram Bot API", "WhatsApp Web (unofficial)"],
+      "infra": ["Docker", "Docker Compose", "VPS"]
+    }
   }
 ]
