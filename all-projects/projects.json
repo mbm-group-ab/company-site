@@ -108,11 +108,11 @@
     "logo": "all-projects/disk-recovery-tool/logo.png",
     "category": "Failing-disk imaging and exFAT file recovery toolchain",
     "description": "A free, open-source toolchain for imaging a damaged/failing disk sector by sector with retries and resume, then recovering exFAT files by parsing filesystem metadata directly (original names and folders, including deleted files), with signature-based carving as a fallback. A cross-platform GUI wraps the pipeline for Windows, macOS and Linux.",
-    "url": "https://mbm-group-ab.github.io/disk-recovery-tool/",
+    "url": "https://disk-recovery-tool.mbm-group.se/",
     "repository": "https://github.com/mbm-group-ab/disk-recovery-tool",
     "status": "live",
     "server": {
-      "host": "mbm-group-ab.github.io/disk-recovery-tool",
+      "host": "disk-recovery-tool.mbm-group.se",
       "reverseProxy": "GitHub Pages",
       "deploy": "GitHub Actions on push to main deploys the landing page via GitHub Pages; the same push bumps a patch version tag and publishes the Windows/macOS/Linux GUI executables to a GitHub Release",
       "persistentData": "none - static landing page; the GUI is a standalone executable driving the recovery CLIs, no server-side state"
