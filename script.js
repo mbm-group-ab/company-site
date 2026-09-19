@@ -6,11 +6,10 @@ const translations = {
     heroText: 'We design and build practical websites, mobile apps, and digital platforms for ambitious businesses.',
     ctaPrimary: 'Book a consultation',
     ctaSecondary: 'Explore services',
-    statProjects: 'Featured product',
+    statProjects: 'Products',
     statExperience: 'Company stage',
     statSupport: 'Direct support',
-    metricLaunch: 'Product status',
-    metricLaunchValue: 'Live',
+    metricLaunch: 'Products live',
     metricWeb: 'Current focus',
     metricMobile: 'Company stage',
     metricBrand: 'Support',
@@ -65,11 +64,10 @@ const translations = {
     heroText: 'ما وب‌سایت‌ها، اپ‌های موبایل و پلتفرم‌های دیجیتال کاربردی برای کسب‌وکارهای ambitious می‌سازیم.',
     ctaPrimary: 'رزرو مشاوره',
     ctaSecondary: 'مشاهده خدمات',
-    statProjects: 'محصول شاخص',
+    statProjects: 'محصولات',
     statExperience: 'مرحله شرکت',
     statSupport: 'پشتیبانی مستقیم',
-    metricLaunch: 'وضعیت محصول',
-    metricLaunchValue: 'فعال',
+    metricLaunch: 'محصولات فعال',
     metricWeb: 'تمرکز فعلی',
     metricMobile: 'مرحله شرکت',
     metricBrand: 'پشتیبانی',
@@ -124,11 +122,10 @@ const translations = {
     heroText: 'Vi designar och bygger praktiska webbplatser, mobilappar och digitala plattformar för ambitiösa företag.',
     ctaPrimary: 'Boka ett samtal',
     ctaSecondary: 'Utforska tjänster',
-    statProjects: 'Utvald produkt',
+    statProjects: 'Produkter',
     statExperience: 'Företagsfas',
     statSupport: 'Direkt support',
-    metricLaunch: 'Produktstatus',
-    metricLaunchValue: 'Live',
+    metricLaunch: 'Produkter live',
     metricWeb: 'Aktuellt fokus',
     metricMobile: 'Företagsfas',
     metricBrand: 'Support',
@@ -185,7 +182,26 @@ const languageOptions = document.querySelectorAll('.lang-option');
 const projectsGrid = document.getElementById('projects-grid');
 let projects = [];
 
+// Hero stats are derived from the catalog so they stay correct when projects are added.
+function renderProjectStats(lang = 'en') {
+  const countEl = document.getElementById('stat-projects-count');
+  const liveEl = document.getElementById('metric-live-count');
+  if (!projects.length) {
+    return;
+  }
+  const format = (n) => n.toLocaleString(lang === 'fa' ? 'fa-IR' : lang);
+  const live = projects.filter((project) => project.status === 'live').length;
+  if (countEl) {
+    countEl.textContent = format(projects.length);
+  }
+  if (liveEl) {
+    liveEl.textContent = `${format(live)}/${format(projects.length)}`;
+  }
+}
+
 function renderProjects(lang = 'en') {
+  renderProjectStats(lang);
+
   if (!projectsGrid) {
     return;
   }
@@ -218,7 +234,7 @@ async function loadProjects() {
       throw new Error(`Projects request failed: ${response.status}`);
     }
     projects = await response.json();
-    renderProjects('en');
+    renderProjects(document.documentElement.lang || 'en');
   } catch (error) {
     console.error('Unable to load project catalog.', error);
   }
