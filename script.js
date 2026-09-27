@@ -61,7 +61,7 @@ const translations = {
     nav: { services: 'خدمات', projects: 'پروژه‌ها', about: 'درباره ما', process: 'فرآیند', contact: 'تماس' },
     eyebrow: 'شرکت توسعه نرم‌افزار',
     heroTitle: 'راهکارهای هوشمند دیجیتال برای پیشرفت کسب‌وکار شما.',
-    heroText: 'ما وب‌سایت‌ها، اپ‌های موبایل و پلتفرم‌های دیجیتال کاربردی برای کسب‌وکارهای ambitious می‌سازیم.',
+    heroText: 'ما وب‌سایت‌ها، اپ‌های موبایل و پلتفرم‌های دیجیتال کاربردی برای کسب‌وکارهای بلندپرواز می‌سازیم.',
     ctaPrimary: 'رزرو مشاوره',
     ctaSecondary: 'مشاهده خدمات',
     statProjects: 'محصولات',
@@ -176,6 +176,8 @@ const translations = {
 };
 
 const elements = document.querySelectorAll('[data-i18n]');
+const navToggle = document.getElementById('nav-toggle');
+const navPanel = document.getElementById('nav-panel');
 const languageTrigger = document.getElementById('language-trigger');
 const languageMenu = document.getElementById('language-menu');
 const languageOptions = document.querySelectorAll('.lang-option');
@@ -240,6 +242,24 @@ async function loadProjects() {
   }
 }
 
+const LANG_STORAGE_KEY = 'mbm-lang';
+
+function getStoredLanguage() {
+  try {
+    return localStorage.getItem(LANG_STORAGE_KEY);
+  } catch (error) {
+    return null;
+  }
+}
+
+function storeLanguage(lang) {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+  } catch (error) {
+    // Ignore storage errors (private browsing, blocked storage, etc.).
+  }
+}
+
 function applyLanguage(lang) {
   const selected = translations[lang] || translations.en;
 
@@ -273,6 +293,32 @@ function applyLanguage(lang) {
   renderProjects(lang);
 }
 
+if (navToggle && navPanel) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navPanel.classList.contains('open');
+    navPanel.classList.toggle('open', !isOpen);
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  navPanel.querySelectorAll('.main-nav a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navPanel.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (
+      navPanel.classList.contains('open') &&
+      !event.target.closest('.nav-panel') &&
+      !event.target.closest('.nav-toggle')
+    ) {
+      navPanel.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 if (languageTrigger) {
   languageTrigger.addEventListener('click', () => {
     const wrapper = languageTrigger.closest('.lang-switcher');
@@ -285,6 +331,7 @@ if (languageTrigger) {
 languageOptions.forEach((option) => {
   option.addEventListener('click', () => {
     applyLanguage(option.dataset.lang);
+    storeLanguage(option.dataset.lang);
     const wrapper = option.closest('.lang-switcher');
     wrapper.classList.remove('open');
     languageTrigger.setAttribute('aria-expanded', 'false');
@@ -303,5 +350,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-applyLanguage('en');
+const storedLanguage = getStoredLanguage();
+applyLanguage(translations[storedLanguage] ? storedLanguage : 'en');
 loadProjects();
