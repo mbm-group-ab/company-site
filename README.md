@@ -36,7 +36,7 @@ Add a project folder under `all-projects`, then add its object to `all-projects/
 .\update-site.ps1
 ```
 
-The script checks that each listed project folder exists and deploys the updated site to Firebase Hosting. The public catalog currently highlights Job Finder AI at `https://job-finder.mbm-group.se/`.
+The script checks that each listed project folder exists and deploys the updated site to Firebase Hosting. The public catalog currently highlights Pishe (job-finder) at `https://job-finder.mbm-group.se/`.
 
 ## Hosting
 Upload all files from this folder to the root of your static hosting account, such as cPanel, Netlify, Vercel static export, or any simple web host.
