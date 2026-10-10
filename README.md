@@ -13,7 +13,7 @@ A simple multilingual static company website for a software development business
 - `styles.css` — design and layout
 - `script.js` — language switching
 - `all-projects/projects.json` — central project catalog shown on the site
-- `update-site.ps1` — validates the catalog and deploys the site to Firebase
+- `update-site.ps1` — validates the catalog and checks the catalog
 
 ## Local preview
 Open the folder in a browser, or run:
@@ -36,15 +36,15 @@ Add a project folder under `all-projects`, then add its object to `all-projects/
 .\update-site.ps1
 ```
 
-The script checks that each listed project folder exists and deploys the updated site to Firebase Hosting. The public catalog currently highlights Pishe (job-finder) at `https://job-finder.mbm-group.se/`.
+The script checks that each listed project folder exists and checks the catalog. The public catalog currently highlights Pishe (job-finder) at `https://job-finder.mbm-group.se/`.
 
 ## Hosting
 Upload all files from this folder to the root of your static hosting account, such as cPanel, Netlify, Vercel static export, or any simple web host.
 
-### Automatic Firebase deployment
-The GitHub Actions workflow in `.github/workflows/deploy-firebase.yml` deploys Firebase Hosting after every push to `main`. It can also be started manually from the Actions tab.
+### Deployment
+The site is served from the VPS (`static-sites` nginx container). `.github/workflows/deploy-vps.yml` copies the files there when the owner approves a deploy in MBM Control (`repository_dispatch` `deploy`); a push only runs the check job. It can also be started from the Actions tab.
 
-For the workflow to authenticate, add a repository secret named `FIREBASE_SERVICE_ACCOUNT` containing a Google Cloud service-account JSON key with permission to deploy Firebase Hosting. Never commit this JSON key to the repository.
+The workflow needs the repo secrets `VPS_HOST`, `VPS_USER` and `VPS_SSH_KEY` (`owner-scripts/set-repo-secrets.sh`).
 
 ## Domains
 This site is prepared to work for:

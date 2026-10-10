@@ -14,8 +14,8 @@ The hero stats ("N Products", "Products live X/Y") and the project cards are ren
 All UI strings live in the `translations` object in `script.js` (`en`, `fa`, `sv`). Add every new key to all three.
 
 ## Deploy
-- Pushing to `main` deploys automatically (`.github/workflows/deploy-firebase.yml`). Don't push without the user's review.
-- `update-site.ps1` checks that every catalog directory exists, then runs `firebase deploy` from the local working tree.
+- A push to `main` only runs `await-approval` in `.github/workflows/deploy-vps.yml`; the owner's 🚀 in MBM Control sends `repository_dispatch` `deploy`, which copies the site to the VPS (ssh + tar, `static-sites` container).
+- `update-site.ps1` only checks that every catalog directory exists (no Firebase any more; deploy = the workflow, or `deploy/static-sites/sync.sh`).
 
 ## Secrets
 `all-projects/vps-key/` holds deploy keys and tokens. It is git-ignored and excluded in `firebase.json`. Never commit it, print it, or remove that exclusion.
