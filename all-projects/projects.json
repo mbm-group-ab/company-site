@@ -20,13 +20,363 @@
       "persistentData": "backend/data/ (TinyDB db.json, LinkedIn browser sessions, logs/app.log) — Docker-volume-mounted, survives redeploys"
     },
     "technologies": {
-      "frontend": ["React", "TypeScript", "Vite"],
-      "backend": ["Python", "FastAPI", "Uvicorn", "TinyDB", "Playwright", "ReportLab", "pypdf"],
-      "ai": ["Gemini 2.5 Flash", "Claude", "Groq", "Ollama"],
-      "integrations": ["MBM Account (OIDC sign-in)", "Telegram bot (@MBM_JOBRADAR_BOT)", "LinkedIn Easy Apply automation", "Gmail OAuth", "JSearch (RapidAPI)", "Adzuna", "Arbetsformedlingen"],
-      "observability": ["Central rotating log file", "Sentry (optional)"],
-      "infra": ["Docker", "Docker Compose", "VPS (persistent volume required)"],
-      "mobile": ["Flutter (Pishe part of the Dordada One app)"]
+      "frontend": [
+        "React",
+        "TypeScript",
+        "Vite"
+      ],
+      "backend": [
+        "Python",
+        "FastAPI",
+        "Uvicorn",
+        "TinyDB",
+        "Playwright",
+        "ReportLab",
+        "pypdf"
+      ],
+      "ai": [
+        "Gemini 2.5 Flash",
+        "Claude",
+        "Groq",
+        "Ollama"
+      ],
+      "integrations": [
+        "MBM Account (OIDC sign-in)",
+        "Telegram bot (@MBM_JOBRADAR_BOT)",
+        "LinkedIn Easy Apply automation",
+        "Gmail OAuth",
+        "JSearch (RapidAPI)",
+        "Adzuna",
+        "Arbetsformedlingen"
+      ],
+      "observability": [
+        "Central rotating log file",
+        "Sentry (optional)"
+      ],
+      "infra": [
+        "Docker",
+        "Docker Compose",
+        "VPS (persistent volume required)"
+      ],
+      "mobile": [
+        "Flutter (Pishe part of the Dordada One app)"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Jobbsök, matchningsanalys och personliga brev (webb, Telegram-bot, Dordada One-appen)",
+        "description": "Pishe hittar jobb som passar dig, visar hur väl du matchar varje annons och skriver ett personligt brev som låter som du. Använd den på webben, som Telegram-bot med daglig sammanfattning eller i appen Dordada One; ett MBM-konto håller ditt CV och dina ansökningar i synk."
+      },
+      "fa": {
+        "category": "جست‌وجوی شغل، تحلیل تطابق و نامهٔ پوششی (وب، ربات تلگرام، اپ دردادا وان)",
+        "description": "پیشه کارهایی را پیدا می‌کند که به شما می‌خورند، می‌گوید چقدر با هر آگهی جورید و نامهٔ پوششی‌ای می‌نویسد که صدای خودتان را دارد. روی وب، به‌صورت ربات تلگرام با خلاصهٔ روزانه یا در اپ دردادا وان؛ یک حساب MBM رزومه و فهرست درخواست‌هایتان را همگام نگه می‌دارد."
+      }
+    }
+  },
+  {
+    "name": "Dordada One",
+    "directory": "dordada-one",
+    "icon": "all-projects/dordada-one/logo.png",
+    "logo": "all-projects/dordada-one/logo.png",
+    "category": "One app for the whole family: music, kids, live TV, home, notes, speech",
+    "description": "Dordada One brings MBM's services into a single mobile app with one sign-in. Each part can also ship as its own app: Dorsa for kids, Lahze for live TV, Khoneh for the smart home, Daftar for notes, Goya for speech and text, Nava for music and Pishe for jobs.",
+    "i18n": {
+      "sv": {
+        "category": "En app för hela familjen: musik, barn, live-tv, hem, anteckningar, tal",
+        "description": "Dordada One samlar MBM:s tjänster i en enda mobilapp med en inloggning. Varje del kan också släppas som egen app: Dorsa för barn, Lahze för live-tv, Khoneh för smarta hemmet, Daftar för anteckningar, Goya för tal och text, Nava för musik och Pishe för jobb."
+      },
+      "fa": {
+        "category": "یک اپ برای همهٔ خانواده: موسیقی، کودک، تلویزیون زنده، خانه، یادداشت، گفتار",
+        "description": "دردادا وان سرویس‌های MBM را با یک ورود در یک اپ موبایل جمع می‌کند. هر بخش می‌تواند اپ جداگانهٔ خودش هم باشد: درسا برای کودکان، لحظه برای تلویزیون زنده، خونه برای خانهٔ هوشمند، دفتر برای یادداشت، گویا برای گفتار و متن، نوا برای موسیقی و پیشه برای کار."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/dordada-one",
+    "status": "beta",
+    "lastDeployedVersion": "73fd574",
+    "lastDeployedAt": "2026-11-04",
+    "server": {},
+    "technologies": {
+      "mobile": [
+        "Flutter",
+        "Dart",
+        "Android"
+      ],
+      "integrations": [
+        "MBM Account (OIDC + PKCE)",
+        "MBM Control access per part",
+        "Push notices"
+      ]
+    }
+  },
+  {
+    "name": "Dorsa",
+    "directory": "dorsa",
+    "icon": "all-projects/dorsa/logo.png",
+    "logo": "all-projects/dorsa/logo.png",
+    "category": "A safe video library for small children",
+    "description": "Grown-ups pick the videos and channels; Dorsa checks, downloads and converts them, and the child plays only that list on the phone or straight on the TV. No ads, no endless feed, no surprises.",
+    "i18n": {
+      "sv": {
+        "category": "Ett tryggt videobibliotek för små barn",
+        "description": "Vuxna väljer videor och kanaler; Dorsa kontrollerar, hämtar och konverterar dem, och barnet spelar bara den listan i telefonen eller direkt på tv:n. Ingen reklam, inget ändlöst flöde, inga överraskningar."
+      },
+      "fa": {
+        "category": "کتابخانهٔ ویدیوی امن برای کودکان خردسال",
+        "description": "بزرگ‌ترها ویدیوها و کانال‌ها را انتخاب می‌کنند؛ درسا آن‌ها را بررسی، دانلود و تبدیل می‌کند و کودک فقط همان فهرست را روی گوشی یا مستقیم روی تلویزیون می‌بیند. بی‌تبلیغ، بی‌فید بی‌پایان، بی‌غافلگیری."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/dorsa-library",
+    "status": "live",
+    "lastDeployedVersion": "c8977a7",
+    "lastDeployedAt": "2026-11-03",
+    "server": {
+      "host": "dorsa.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "yt-dlp",
+        "ffmpeg"
+      ],
+      "infra": [
+        "Docker",
+        "Cloudflare R2"
+      ],
+      "mobile": [
+        "Flutter",
+        "DLNA casting"
+      ]
+    }
+  },
+  {
+    "name": "Lahze",
+    "directory": "lahze",
+    "icon": "all-projects/lahze/logo.png",
+    "logo": "all-projects/lahze/logo.png",
+    "category": "Live TV from open channels, on the phone and on Samsung TVs",
+    "description": "Lahze lists thousands of open live channels, Iranian channels first, checks every night which ones still work, and plays them on the phone or in its own Samsung Frame TV app paired with the phone.",
+    "i18n": {
+      "sv": {
+        "category": "Live-tv från öppna kanaler, i mobilen och på Samsung-tv",
+        "description": "Lahze listar tusentals öppna livekanaler, iranska först, kontrollerar varje natt vilka som fungerar och spelar dem i mobilen eller i sin egen app för Samsung Frame-tv, parad med telefonen."
+      },
+      "fa": {
+        "category": "تلویزیون زنده از کانال‌های آزاد، روی گوشی و تلویزیون سامسونگ",
+        "description": "لحظه هزاران کانال زندهٔ آزاد را فهرست می‌کند، اول کانال‌های ایرانی، هر شب بررسی می‌کند کدام‌ها کار می‌کنند و آن‌ها را روی گوشی یا در اپ اختصاصی‌اش روی تلویزیون سامسونگ فریم پخش می‌کند."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/mahvare",
+    "status": "live",
+    "lastDeployedVersion": "0c4a8b9",
+    "lastDeployedAt": "2026-10-29",
+    "server": {
+      "host": "lahze.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI"
+      ],
+      "tv": [
+        "Tizen web app"
+      ],
+      "mobile": [
+        "Flutter"
+      ],
+      "infra": [
+        "Docker",
+        "Stream relay"
+      ]
+    }
+  },
+  {
+    "name": "Khoneh",
+    "directory": "khoneh",
+    "icon": "all-projects/khoneh/logo.png",
+    "logo": "all-projects/khoneh/logo.png",
+    "category": "Smart home: appliances, lamps, rooms and scenes in one place",
+    "description": "Khoneh controls Samsung SmartThings appliances and Tuya lamps from one app, with your home's layout, room groups and scenes. Safety first: nothing that heats can be started from the app.",
+    "i18n": {
+      "sv": {
+        "category": "Smarta hemmet: vitvaror, lampor, rum och scener på ett ställe",
+        "description": "Khoneh styr Samsung SmartThings-apparater och Tuya-lampor från en app, med hemmets planlösning, rumsgrupper och scener. Säkerheten först: inget som värmer kan startas från appen."
+      },
+      "fa": {
+        "category": "خانهٔ هوشمند: لوازم خانگی، لامپ‌ها، اتاق‌ها و سناریوها در یک جا",
+        "description": "خونه لوازم سامسونگ اسمارت‌تینگز و لامپ‌های Tuya را از یک اپ کنترل می‌کند، با نقشهٔ خانه، گروه اتاق‌ها و سناریوها. اول ایمنی: هیچ وسیلهٔ گرمازایی از اپ روشن نمی‌شود."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/khoneh",
+    "status": "beta",
+    "lastDeployedVersion": "9a0cc72",
+    "lastDeployedAt": "2026-10-24",
+    "server": {
+      "host": "khoneh.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI"
+      ],
+      "integrations": [
+        "Samsung SmartThings (OAuth)",
+        "Tuya"
+      ],
+      "mobile": [
+        "Flutter"
+      ]
+    }
+  },
+  {
+    "name": "Goya",
+    "directory": "goya",
+    "icon": "all-projects/goya/logo.png",
+    "logo": "all-projects/goya/logo.png",
+    "category": "Speech, pictures and text: transcribe, subtitle, read aloud",
+    "description": "Goya turns video and audio into text and subtitles, reads text out of pictures and speaks text aloud, with an editor where AI fixes spelling and translates. Recordings stay on our own servers.",
+    "i18n": {
+      "sv": {
+        "category": "Tal, bilder och text: transkribera, texta, läsa upp",
+        "description": "Goya gör video och ljud till text och undertexter, läser text ur bilder och läser upp text, med en editor där AI rättar stavning och översätter. Inspelningarna stannar på våra egna servrar."
+      },
+      "fa": {
+        "category": "گفتار، تصویر و متن: تبدیل صدا به متن، زیرنویس، خواندن با صدا",
+        "description": "گویا ویدیو و صدا را به متن و زیرنویس تبدیل می‌کند، متن را از عکس می‌خواند و متن را با صدا می‌خواند، با ویرایشگری که هوش مصنوعی در آن غلط‌ها را درست و ترجمه می‌کند. فایل‌ها روی سرورهای خودمان می‌مانند."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/goya",
+    "status": "beta",
+    "lastDeployedVersion": "3ba14f5",
+    "lastDeployedAt": "2026-11-03",
+    "server": {
+      "host": "goya.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite"
+      ],
+      "ai": [
+        "Whisper (local)",
+        "Piper TTS",
+        "MBM AI"
+      ],
+      "mobile": [
+        "Flutter"
+      ]
+    }
+  },
+  {
+    "name": "Daftar",
+    "directory": "daftar",
+    "icon": "all-projects/daftar/logo.png",
+    "logo": "all-projects/daftar/logo.png",
+    "category": "Cloud notes with AI that organizes them for you",
+    "description": "Daftar keeps your notes in the cloud with fast search, in the app or as a Telegram bot. AI gives them titles and categories; private notes are handled only by our own local model.",
+    "i18n": {
+      "sv": {
+        "category": "Anteckningar i molnet med AI som ordnar dem åt dig",
+        "description": "Daftar sparar dina anteckningar i molnet med snabb sökning, i appen eller som Telegram-bot. AI ger dem rubriker och kategorier; privata anteckningar hanteras bara av vår egen lokala modell."
+      },
+      "fa": {
+        "category": "یادداشت‌های ابری با هوش مصنوعی که مرتبشان می‌کند",
+        "description": "دفتر یادداشت‌هایتان را با جست‌وجوی سریع در ابر نگه می‌دارد، در اپ یا ربات تلگرام. هوش مصنوعی برایشان عنوان و دسته می‌گذارد؛ یادداشت‌های خصوصی فقط با مدل محلی خودمان پردازش می‌شوند."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/notes-api",
+    "status": "beta",
+    "lastDeployedVersion": "0705aee",
+    "lastDeployedAt": "2026-11-03",
+    "server": {
+      "host": "daftar.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite FTS5"
+      ],
+      "integrations": [
+        "Telegram bot (@MBM_DAFTAR_BOT)",
+        "MBM AI"
+      ],
+      "mobile": [
+        "Flutter"
+      ]
+    }
+  },
+  {
+    "name": "Peyda",
+    "directory": "peyda",
+    "icon": "all-projects/peyda/logo.png",
+    "logo": "all-projects/peyda/logo.png",
+    "category": "Answer-first shopping search: the best few matches, with reasons",
+    "description": "Ask for what you want to buy in plain words (\"a gaming PC under 15,000 kr\") and Peyda searches shops and marketplaces in Sweden and Iran, new and used, and returns the few best matches with why they fit and how the price has moved.",
+    "i18n": {
+      "sv": {
+        "category": "Shoppingsök som svarar direkt: de bästa träffarna, med motivering",
+        "description": "Beskriv vad du vill köpa med egna ord (\"en speldator under 15 000 kr\") så söker Peyda i butiker och marknadsplatser i Sverige och Iran, nytt och begagnat, och visar de få bästa träffarna med varför de passar och hur priset har rört sig."
+      },
+      "fa": {
+        "category": "جست‌وجوی خرید با جواب مستقیم: چند گزینهٔ بهتر، با دلیل",
+        "description": "چیزی را که می‌خواهید بخرید با زبان خودتان بگویید («یک کامپیوتر گیمینگ زیر ۱۵ هزار کرون») تا پیدا فروشگاه‌ها و بازارهای سوئد و ایران را، نو و دست‌دوم، بگردد و چند گزینهٔ بهتر را با دلیل و روند قیمت نشان دهد."
+      }
+    },
+    "url": "https://peyda.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/finder",
+    "status": "live",
+    "lastDeployedVersion": "00cef8b",
+    "lastDeployedAt": "2026-11-02",
+    "server": {
+      "host": "peyda.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "SQLite FTS5"
+      ],
+      "integrations": [
+        "Inet",
+        "Webhallen",
+        "Divar",
+        "Public Telegram channels"
+      ],
+      "ai": [
+        "MBM AI"
+      ]
     }
   },
   {
@@ -50,8 +400,28 @@
       "persistentData": "none - stateless; uploads are scanned into a temp folder and discarded after each request"
     },
     "technologies": {
-      "backend": ["Python", "Flask", "Pillow", "gunicorn", "ffprobe (FFmpeg)"],
-      "infra": ["Docker", "Docker Compose", "VPS"]
+      "backend": [
+        "Python",
+        "Flask",
+        "Pillow",
+        "gunicorn",
+        "ffprobe (FFmpeg)"
+      ],
+      "infra": [
+        "Docker",
+        "Docker Compose",
+        "VPS"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Granskning av datum på foton och videor",
+        "description": "Hittar när ett foto eller en video egentligen togs, även när metadata saknas eller är fel, så att bilderna hamnar på rätt plats i Google Foto."
+      },
+      "fa": {
+        "category": "بررسی تاریخ عکس‌ها و ویدیوها",
+        "description": "زمان واقعی گرفتن هر عکس یا ویدیو را پیدا می‌کند، حتی وقتی متادیتا ندارد یا اشتباه است، تا عکس‌ها در گوگل فوتوز سر جای درستشان بنشینند."
+      }
     }
   },
   {
@@ -75,9 +445,35 @@
       "persistentData": "data/ (SQLite DB, Mofid/Avanza Playwright session state) — Docker-volume-mounted, survives redeploys; session files are seeded from an interactive local login since the server can't solve login captchas itself"
     },
     "technologies": {
-      "backend": ["Python", "Flask", "gunicorn", "Playwright", "APScheduler", "SQLite"],
-      "integrations": ["Google OAuth", "Mofid Trader (easytrader.ir)", "Avanza", "Telegram Bot API"],
-      "infra": ["Docker", "Docker Compose", "VPS"]
+      "backend": [
+        "Python",
+        "Flask",
+        "gunicorn",
+        "Playwright",
+        "APScheduler",
+        "SQLite"
+      ],
+      "integrations": [
+        "Google OAuth",
+        "Mofid Trader (easytrader.ir)",
+        "Avanza",
+        "Telegram Bot API"
+      ],
+      "infra": [
+        "Docker",
+        "Docker Compose",
+        "VPS"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Portfölj- och marknadsanalys över flera mäklare",
+        "description": "SahamYar samlar dina innehav från flera mäklare på ett ställe och analyserar portfölj och marknad, med orderläggning som alltid kräver ditt godkännande."
+      },
+      "fa": {
+        "category": "تحلیل سبد سهام و بازار در چند کارگزاری",
+        "description": "سهام‌یار دارایی‌هایتان در چند کارگزاری را یک‌جا جمع می‌کند و سبد و بازار را تحلیل می‌کند؛ ثبت سفارش همیشه منتظر تأیید خود شماست."
+      }
     }
   },
   {
@@ -97,8 +493,25 @@
       "persistentData": "none - static landing page; app itself is a standalone desktop executable, no server-side state"
     },
     "technologies": {
-      "desktop": ["Python", "Tkinter", "PyInstaller"],
-      "infra": ["Firebase Hosting", "GitHub Actions"]
+      "desktop": [
+        "Python",
+        "Tkinter",
+        "PyInstaller"
+      ],
+      "infra": [
+        "Firebase Hosting",
+        "GitHub Actions"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Mappjämförelse och dubblettsökning för alla plattformar",
+        "description": "Jämför två mappar eller diskar och hittar dubbletter snabbt, med ett enkelt grafiskt gränssnitt för Windows, macOS och Linux."
+      },
+      "fa": {
+        "category": "مقایسهٔ پوشه‌ها و یافتن فایل‌های تکراری روی همهٔ سیستم‌عامل‌ها",
+        "description": "دو پوشه یا دیسک را مقایسه می‌کند و فایل‌های تکراری را سریع پیدا می‌کند، با رابط گرافیکی ساده برای ویندوز، مک و لینوکس."
+      }
     }
   },
   {
@@ -118,9 +531,30 @@
       "persistentData": "none - static landing page; the GUI is a standalone executable driving the recovery CLIs, no server-side state"
     },
     "technologies": {
-      "core": ["C++20", "CMake", "Win32 raw-disk I/O"],
-      "gui": ["Python", "Tkinter", "PyInstaller"],
-      "infra": ["GitHub Pages", "GitHub Actions"]
+      "core": [
+        "C++20",
+        "CMake",
+        "Win32 raw-disk I/O"
+      ],
+      "gui": [
+        "Python",
+        "Tkinter",
+        "PyInstaller"
+      ],
+      "infra": [
+        "GitHub Pages",
+        "GitHub Actions"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Avbildning av trasiga diskar och filåterställning från exFAT",
+        "description": "En verktygskedja som säkert avbildar en trasig disk och räddar filer från ett skadat exFAT-filsystem, steg för steg."
+      },
+      "fa": {
+        "category": "تصویربرداری از دیسک‌های خراب و بازیابی فایل از exFAT",
+        "description": "زنجیره‌ای از ابزارها که از دیسک خراب با احتیاط تصویر می‌گیرد و فایل‌ها را از فایل‌سیستم exFAT آسیب‌دیده، قدم‌به‌قدم نجات می‌دهد."
+      }
     }
   },
   {
@@ -144,10 +578,323 @@
       "persistentData": "runtime/sender/ (WhatsApp Baileys sessions + per-session contacts, one per linked browser) — Docker-volume-mounted, survives redeploys"
     },
     "technologies": {
-      "backend": ["Python", "Flask", "gunicorn", "python-telegram-bot", "yt-dlp"],
-      "whatsapp": ["Node.js", "Express", "Baileys"],
-      "integrations": ["Telegram Bot API", "WhatsApp Web (unofficial)"],
-      "infra": ["Docker", "Docker Compose", "VPS"]
+      "backend": [
+        "Python",
+        "Flask",
+        "gunicorn",
+        "python-telegram-bot",
+        "yt-dlp"
+      ],
+      "whatsapp": [
+        "Node.js",
+        "Express",
+        "Baileys"
+      ],
+      "integrations": [
+        "Telegram Bot API",
+        "WhatsApp Web (unofficial)"
+      ],
+      "infra": [
+        "Docker",
+        "Docker Compose",
+        "VPS"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "Mediehämtare och vidarebefordran från många plattformar",
+        "description": "Hämtar video och musik från många plattformar och skickar dem vidare till Telegram eller WhatsApp; även musikdelen Nava i Dordada One."
+      },
+      "fa": {
+        "category": "دانلود و ارسال رسانه از پلتفرم‌های مختلف",
+        "description": "ویدیو و موسیقی را از پلتفرم‌های مختلف دانلود و به تلگرام یا واتساپ می‌فرستد؛ بخش موسیقی «نوا» در دردادا وان هم روی همین است."
+      }
+    }
+  },
+  {
+    "name": "MBM Account",
+    "directory": "mbm-account",
+    "icon": "all-projects/mbm-account/logo.png",
+    "logo": "all-projects/mbm-account/logo.png",
+    "category": "One sign-in for every MBM app and service",
+    "description": "MBM Account is our own login: Google or email and password, with Telegram linked when you want it. Every app signs in through it with modern OpenID Connect, so one account opens everything you have access to.",
+    "i18n": {
+      "sv": {
+        "category": "En inloggning för alla MBM:s appar och tjänster",
+        "description": "MBM-kontot är vår egen inloggning: Google eller e-post och lösenord, med Telegram kopplat när du vill. Alla appar loggar in via det med modern OpenID Connect, så ett konto öppnar allt du har tillgång till."
+      },
+      "fa": {
+        "category": "یک ورود برای همهٔ اپ‌ها و سرویس‌های MBM",
+        "description": "حساب MBM ورود اختصاصی خودمان است: گوگل یا ایمیل و رمز، و هر وقت خواستید تلگرام هم وصل می‌شود. همهٔ اپ‌ها با OpenID Connect از طریق آن وارد می‌شوند و یک حساب همهٔ چیزهایی را که به آن دسترسی دارید باز می‌کند."
+      }
+    },
+    "url": "https://account.mbm-group.se/",
+    "repository": "https://github.com/mbm-group-ab/gateway",
+    "status": "live",
+    "lastDeployedVersion": "774cfac",
+    "lastDeployedAt": "2026-11-03",
+    "server": {
+      "host": "account.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL"
+      ],
+      "integrations": [
+        "OpenID Connect (code + PKCE)",
+        "Google sign-in",
+        "Telegram linking"
+      ]
+    }
+  },
+  {
+    "name": "MBM AI",
+    "directory": "mbm-ai",
+    "icon": "all-projects/mbm-ai/logo.png",
+    "logo": "all-projects/mbm-ai/logo.png",
+    "category": "Our shared AI service: the right model for each task, private data kept local",
+    "description": "Every MBM product reaches AI through one service with its own key and budget. MBM AI picks the model per task (Claude, Gemini or our own local models), keeps private data on our own servers and runs speech recognition and text-to-speech in-house.",
+    "i18n": {
+      "sv": {
+        "category": "Vår gemensamma AI-tjänst: rätt modell för varje uppgift, privat data stannar lokalt",
+        "description": "Alla MBM-produkter når AI via en tjänst med egen nyckel och budget. MBM AI väljer modell per uppgift (Claude, Gemini eller våra egna lokala modeller), håller privat data på våra egna servrar och kör taligenkänning och talsyntes internt."
+      },
+      "fa": {
+        "category": "سرویس مشترک هوش مصنوعی ما: مدل مناسب برای هر کار، دادهٔ خصوصی محلی",
+        "description": "همهٔ محصولات MBM از طریق یک سرویس با کلید و بودجهٔ خودشان به هوش مصنوعی می‌رسند. MBM AI برای هر کار مدل را انتخاب می‌کند (Claude، Gemini یا مدل‌های محلی خودمان)، دادهٔ خصوصی را روی سرورهای خودمان نگه می‌دارد و تشخیص گفتار و تبدیل متن به صدا را خودش اجرا می‌کند."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/mbm-ai",
+    "status": "live",
+    "lastDeployedVersion": "ed7f13b",
+    "lastDeployedAt": "2026-10-31",
+    "server": {
+      "host": "internal network",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite"
+      ],
+      "ai": [
+        "Claude",
+        "Gemini",
+        "Ollama",
+        "faster-whisper",
+        "Piper"
+      ],
+      "infra": [
+        "Docker (internal network only)"
+      ]
+    }
+  },
+  {
+    "name": "WhatsApp Archive",
+    "directory": "whatsapp-archive",
+    "icon": "all-projects/whatsapp-archive/logo.png",
+    "logo": "all-projects/whatsapp-archive/logo.png",
+    "category": "Keeps every WhatsApp chat safe in a Telegram group, one topic per chat",
+    "description": "Link WhatsApp once by QR code and the archive bot copies every chat, history and new messages, with media and edits, into your own Telegram group, one topic per chat. Nothing is kept on our server after delivery.",
+    "i18n": {
+      "sv": {
+        "category": "Sparar varje WhatsApp-chatt tryggt i en Telegram-grupp, ett ämne per chatt",
+        "description": "Koppla WhatsApp en gång med QR-kod så kopierar arkivboten varje chatt, historik och nya meddelanden, med media och redigeringar, till din egen Telegram-grupp med ett ämne per chatt. Inget sparas på vår server efter leverans."
+      },
+      "fa": {
+        "category": "همهٔ چت‌های واتساپ را در یک گروه تلگرام نگه می‌دارد، هر چت یک تاپیک",
+        "description": "یک بار واتساپ را با QR وصل کنید تا ربات آرشیو همهٔ چت‌ها را، چه گذشته چه پیام‌های تازه، با رسانه و ویرایش‌ها در گروه تلگرام خودتان کپی کند، هر چت در یک تاپیک. بعد از تحویل چیزی روی سرور ما نمی‌ماند."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/messenger-app-hub",
+    "status": "live",
+    "lastDeployedVersion": "4fca09e",
+    "lastDeployedAt": "2026-10-27",
+    "server": {
+      "host": "archive.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "backend": [
+        "Python",
+        "Flask",
+        "python-telegram-bot"
+      ],
+      "integrations": [
+        "WhatsApp (Baileys, linked device)",
+        "Telegram Forum topics"
+      ],
+      "infra": [
+        "Node.js bridge",
+        "Docker"
+      ]
+    }
+  },
+  {
+    "name": "MBM Tags",
+    "directory": "mbm-tags",
+    "icon": "all-projects/mbm-tags/logo.png",
+    "logo": "all-projects/mbm-tags/logo.png",
+    "category": "QR and NFC lost-and-found tags, starting with child safety tags",
+    "description": "Put a tag on a backpack, a key ring or a child's jacket. Whoever finds it scans the tag, sees only what you chose to show and can send you a found report with their location, without ever seeing your number.",
+    "i18n": {
+      "sv": {
+        "category": "QR- och NFC-taggar för hittegods, först trygghetstaggar för barn",
+        "description": "Sätt en tagg på en ryggsäck, en nyckelring eller ett barns jacka. Den som hittar den skannar taggen, ser bara det du valt att visa och kan skicka ett hittat-meddelande med sin plats, utan att någonsin se ditt nummer."
+      },
+      "fa": {
+        "category": "برچسب‌های QR و NFC برای اشیای گمشده، اول برچسب ایمنی کودک",
+        "description": "برچسب را روی کوله، جاکلیدی یا کاپشن بچه بزنید. هر کس پیدایش کند برچسب را اسکن می‌کند، فقط چیزی را می‌بیند که شما خواسته‌اید و می‌تواند با موقعیتش خبر پیدا شدن بفرستد، بی‌آنکه شمارهٔ شما را ببیند."
+      }
+    },
+    "url": "",
+    "repository": "",
+    "status": "coming-soon",
+    "lastDeployedVersion": "44cd925",
+    "lastDeployedAt": "2026-10-22",
+    "server": {},
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite"
+      ],
+      "integrations": [
+        "QR codes",
+        "NFC"
+      ]
+    }
+  },
+  {
+    "name": "MBM Control",
+    "directory": "mbm-control",
+    "icon": "all-projects/mbm-control/logo.png",
+    "logo": "all-projects/mbm-control/logo.png",
+    "category": "Our operations hub: deploys, users, health and approvals from one chat",
+    "description": "Every MBM product reports to one hub: users and access per bot, server and backup health, AI budgets and incidents. Nothing goes live without a tap on Deploy in the MBM Control Telegram bot, and every action is audited.",
+    "i18n": {
+      "sv": {
+        "category": "Vårt driftnav: driftsättningar, användare, hälsa och godkännanden från en chatt",
+        "description": "Alla MBM-produkter rapporterar till ett nav: användare och åtkomst per bot, server- och backuphälsa, AI-budgetar och incidenter. Inget går live utan ett tryck på Deploy i Telegram-boten MBM Control, och varje åtgärd loggas."
+      },
+      "fa": {
+        "category": "مرکز عملیات ما: انتشار، کاربران، سلامت و تأییدها از یک چت",
+        "description": "همهٔ محصولات MBM به یک مرکز گزارش می‌دهند: کاربران و دسترسی هر ربات، سلامت سرورها و پشتیبان‌ها، بودجهٔ هوش مصنوعی و رخدادها. هیچ چیز بدون زدن دکمهٔ Deploy در ربات تلگرام MBM Control منتشر نمی‌شود و هر کاری ثبت می‌شود."
+      }
+    },
+    "url": "",
+    "repository": "https://github.com/mbm-group-ab/project-hub",
+    "status": "live",
+    "lastDeployedVersion": "018c0ae",
+    "lastDeployedAt": "2026-11-04",
+    "server": {
+      "host": "hub.mbm-group.se",
+      "ip": "216.9.226.9",
+      "os": "AlmaLinux",
+      "reverseProxy": "nginx + Let's Encrypt (certbot)",
+      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
+    },
+    "technologies": {
+      "frontend": [
+        "React",
+        "TypeScript"
+      ],
+      "backend": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL"
+      ],
+      "integrations": [
+        "Telegram bot (@MBM_HUB_BOT)",
+        "GitHub App + webhooks"
+      ]
+    }
+  },
+  {
+    "name": "Agent Crew",
+    "directory": "agent-crew",
+    "icon": "all-projects/agent-crew/logo.png",
+    "logo": "all-projects/agent-crew/logo.png",
+    "category": "AI teammates that plan, code and review, with a human approving each step",
+    "description": "Our AI crew turns an issue into a plan, writes the pull request and reviews it, with advisors for architecture, design, security and more. The owner approves the plan and the merge from Telegram; the crew learns from a shared journal.",
+    "i18n": {
+      "sv": {
+        "category": "AI-kollegor som planerar, kodar och granskar, med en människa som godkänner varje steg",
+        "description": "Vårt AI-team gör ett ärende till en plan, skriver pull requesten och granskar den, med rådgivare för arkitektur, design, säkerhet med mera. Ägaren godkänner plan och sammanslagning från Telegram; teamet lär sig av en gemensam journal."
+      },
+      "fa": {
+        "category": "هم‌تیمی‌های هوش مصنوعی که برنامه می‌ریزند، کد می‌نویسند و بازبینی می‌کنند، با تأیید انسان در هر قدم",
+        "description": "تیم هوش مصنوعی ما یک issue را به برنامه تبدیل می‌کند، pull request را می‌نویسد و بازبینی می‌کند، با مشاورهایی برای معماری، طراحی، امنیت و غیره. مالک برنامه و ادغام را از تلگرام تأیید می‌کند؛ تیم از یک دفترچهٔ مشترک یاد می‌گیرد."
+      }
+    },
+    "url": "",
+    "repository": "",
+    "status": "live",
+    "lastDeployedVersion": "6c7711e",
+    "lastDeployedAt": "2026-10-24",
+    "server": {},
+    "technologies": {
+      "infra": [
+        "GitHub Actions",
+        "Claude Code"
+      ],
+      "integrations": [
+        "MBM Control approvals",
+        "MBM Crew Telegram bot"
+      ]
+    }
+  },
+  {
+    "name": "Sana",
+    "directory": "sana",
+    "icon": "all-projects/sana/logo.png",
+    "logo": "all-projects/sana/logo.png",
+    "category": "AI assistant",
+    "description": "The chat assistant on this site: answers questions about MBM and its products, helps you describe a project and shows a rough price before you send a request.",
+    "url": "https://mbm-group.se/#start",
+    "repository": "",
+    "status": "beta",
+    "lastDeployedVersion": "",
+    "lastDeployedAt": "",
+    "server": {},
+    "technologies": {
+      "backend": [
+        "Python",
+        "FastAPI",
+        "SQLite"
+      ],
+      "ai": [
+        "MBM AI",
+        "Claude Haiku"
+      ],
+      "integrations": [
+        "MBM Control notices"
+      ]
+    },
+    "i18n": {
+      "sv": {
+        "category": "AI-assistent",
+        "description": "Chattassistenten på den här webbplatsen: svarar på frågor om MBM och våra produkter, hjälper dig beskriva ett projekt och visar ett ungefärligt pris innan du skickar en förfrågan."
+      },
+      "fa": {
+        "category": "دستیار هوش مصنوعی",
+        "description": "دستیار گفت‌وگوی همین سایت: به پرسش‌ها دربارهٔ MBM و محصولاتش پاسخ می‌دهد، کمک می‌کند پروژه‌تان را توضیح دهید و پیش از ارسال درخواست، یک قیمت تقریبی نشان می‌دهد."
+      }
     }
   }
 ]

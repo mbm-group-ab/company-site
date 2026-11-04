@@ -45,6 +45,7 @@
             <a href="#projects" data-i18n="nav.projects">Projects</a>
             <a href="#about" data-i18n="nav.about">About</a>
             <a href="#process" data-i18n="nav.process">Process</a>
+            <a href="#start" data-i18n="navStart">Start a project</a>
             <a href="#contact" data-i18n="nav.contact">Contact</a>
           </nav>
 
@@ -72,7 +73,7 @@
               We design and build practical websites, mobile apps, and digital platforms for ambitious businesses.
             </p>
             <div class="cta-group">
-              <a class="btn btn-primary" href="#contact" data-i18n="ctaPrimary">Book a consultation</a>
+              <a class="btn btn-primary" href="#start" data-i18n="ctaPrimary">Book a consultation</a>
               <a class="btn btn-secondary" href="#services" data-i18n="ctaSecondary">Explore services</a>
             </div>
 
@@ -262,6 +263,89 @@
         </div>
       </section>
 
+      <section id="start" class="section muted-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="start.eyebrow">Start a project</p>
+            <h2 data-i18n="start.title">Tell us what you need, see a rough price.</h2>
+            <p data-i18n="start.text">Pick what you want built and send it to us.</p>
+          </div>
+
+          <div class="start-layout">
+            <form id="start-form" class="start-form" novalidate>
+              <fieldset>
+                <legend data-i18n="start.typeLabel">What do you want built?</legend>
+                <div class="chips">
+                <label class="chip"><input type="checkbox" name="types" value="mobile_app" /><span data-i18n="start.types.mobile_app">mobile_app</span></label>
+                <label class="chip"><input type="checkbox" name="types" value="web_app" /><span data-i18n="start.types.web_app">web_app</span></label>
+                <label class="chip"><input type="checkbox" name="types" value="website" /><span data-i18n="start.types.website">website</span></label>
+                <label class="chip"><input type="checkbox" name="types" value="telegram_bot" /><span data-i18n="start.types.telegram_bot">telegram_bot</span></label>
+                <label class="chip"><input type="checkbox" name="types" value="other" /><span data-i18n="start.types.other">other</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend data-i18n="start.featuresLabel">What should it have?</legend>
+                <div class="chips">
+                <label class="chip"><input type="checkbox" name="features" value="accounts" /><span data-i18n="start.features.accounts">accounts</span></label>
+                <label class="chip"><input type="checkbox" name="features" value="payments" /><span data-i18n="start.features.payments">payments</span></label>
+                <label class="chip"><input type="checkbox" name="features" value="admin" /><span data-i18n="start.features.admin">admin</span></label>
+                <label class="chip"><input type="checkbox" name="features" value="ai" /><span data-i18n="start.features.ai">ai</span></label>
+                <label class="chip"><input type="checkbox" name="features" value="languages" /><span data-i18n="start.features.languages">languages</span></label>
+                <label class="chip"><input type="checkbox" name="features" value="integrations" /><span data-i18n="start.features.integrations">integrations</span></label>
+                </div>
+              </fieldset>
+              <div class="start-row">
+                <fieldset>
+                  <legend data-i18n="start.scopeLabel">Size</legend>
+                  <div class="chips">
+                <label class="chip"><input type="radio" name="scope" value="small" /><span data-i18n="start.scope.small">small</span></label>
+                <label class="chip"><input type="radio" name="scope" value="medium" checked /><span data-i18n="start.scope.medium">medium</span></label>
+                <label class="chip"><input type="radio" name="scope" value="large" /><span data-i18n="start.scope.large">large</span></label>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend data-i18n="start.timelineLabel">When</legend>
+                  <div class="chips">
+                <label class="chip"><input type="radio" name="timeline" value="flexible" /><span data-i18n="start.timeline.flexible">flexible</span></label>
+                <label class="chip"><input type="radio" name="timeline" value="normal" checked /><span data-i18n="start.timeline.normal">normal</span></label>
+                <label class="chip"><input type="radio" name="timeline" value="rush" /><span data-i18n="start.timeline.rush">rush</span></label>
+                  </div>
+                </fieldset>
+              </div>
+              <label class="check"><input type="checkbox" name="care" /><span data-i18n="start.care">MBM hosts and maintains it each month</span></label>
+              <label class="field">
+                <span data-i18n="start.descLabel">Describe your idea</span>
+                <textarea name="description" rows="4" maxlength="4000" data-i18n-placeholder="start.descPlaceholder"></textarea>
+              </label>
+              <div class="start-row">
+                <label class="field"><span data-i18n="start.name">Name</span><input name="name" autocomplete="name" maxlength="120" required /></label>
+                <label class="field"><span data-i18n="start.email">Email</span><input name="email" type="email" autocomplete="email" maxlength="200" required /></label>
+              </div>
+              <div class="start-row">
+                <label class="field"><span data-i18n="start.company">Company (optional)</span><input name="company" autocomplete="organization" maxlength="160" /></label>
+                <label class="field"><span data-i18n="start.phone">Phone (optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+              </div>
+              <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+              <label class="check"><input type="checkbox" name="consent" /><span><span data-i18n="start.consent">MBM may store this request and contact me about it.</span> <a href="/privacy.html" data-i18n="start.privacy">Privacy policy</a></span></label>
+              <p class="form-error" id="start-error" role="alert" hidden></p>
+              <button class="btn btn-primary" type="submit" data-i18n="start.submit">Send request</button>
+            </form>
+
+            <aside class="estimate-box" aria-live="polite">
+              <p class="estimate-title" data-i18n="start.estimateTitle">Rough price</p>
+              <p class="estimate-range empty" id="estimate-range" data-i18n="start.estimateEmpty">Choose a type to see a range.</p>
+              <p class="estimate-monthly" id="estimate-monthly" hidden></p>
+              <p class="estimate-note" data-i18n="start.estimateNote">Excl. VAT, launch included.</p>
+            </aside>
+
+            <div class="start-thanks" id="start-thanks" hidden>
+              <h3 data-i18n="start.thanksTitle">Thank you, we got it.</h3>
+              <p id="start-thanks-text"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="section cta-band">
         <div class="container contact-box">
           <div>
@@ -286,6 +370,30 @@
       </div>
     </footer>
 
+    <div class="sana" id="sana" data-api="https://sana.mbm-group.se">
+      <button class="sana-open btn btn-primary" id="sana-open" type="button" aria-expanded="false" aria-controls="sana-panel">
+        <span class="sana-dot" aria-hidden="true"></span><span data-i18n="sana.open">Ask Sana</span>
+      </button>
+      <section class="sana-panel" id="sana-panel" hidden aria-labelledby="sana-title">
+        <header class="sana-head">
+          <img src="all-projects/sana/logo.png" alt="" width="36" height="36" />
+          <div>
+            <strong id="sana-title" data-i18n="sana.title">Sana</strong>
+            <span data-i18n="sana.subtitle">MBM assistant</span>
+          </div>
+          <button class="sana-close" id="sana-close" type="button" data-i18n="sana.close">Close</button>
+        </header>
+        <p class="sana-note" data-i18n="sana.note">Sana is an AI assistant.</p>
+        <div class="sana-log" id="sana-log" aria-live="polite"></div>
+        <form class="sana-input" id="sana-form">
+          <textarea id="sana-text" rows="1" maxlength="2000" data-i18n-placeholder="sana.placeholder"></textarea>
+          <button class="btn btn-primary" type="submit" data-i18n="sana.send">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="start-texts.js"></script>
     <script src="script.js"></script>
+    <script src="start.js"></script>
   </body>
 </html>

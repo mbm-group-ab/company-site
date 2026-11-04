@@ -175,7 +175,17 @@ const translations = {
   }
 };
 
+// The project form and Sana chat keep their texts in start-texts.js.
+if (typeof startTranslations !== 'undefined') {
+  Object.keys(startTranslations).forEach((lang) => Object.assign(translations[lang], startTranslations[lang]));
+}
+
+function translate(selected, key) {
+  return key.split('.').reduce((value, part) => value && value[part], selected);
+}
+
 const elements = document.querySelectorAll('[data-i18n]');
+const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
 const navToggle = document.getElementById('nav-toggle');
 const navPanel = document.getElementById('nav-panel');
 const languageTrigger = document.getElementById('language-trigger');
@@ -208,19 +218,23 @@ function renderProjects(lang = 'en') {
     return;
   }
 
-  const technologiesLabel = translations[lang]?.projectTechnologies || translations.en.projectTechnologies;
+  const selected = translations[lang] || translations.en;
+  const technologiesLabel = selected.projectTechnologies || translations.en.projectTechnologies;
+  const statusLabels = { beta: selected.statusBeta, 'coming-soon': selected.statusComingSoon };
   const getTechnologies = (technologies) => Array.isArray(technologies)
     ? technologies
     : Object.values(technologies || {}).flat();
+  // Catalog texts are English; an entry may carry i18n.<lang>.{category, description}.
+  const localized = (project, field) => project.i18n?.[lang]?.[field] || project[field];
   projectsGrid.innerHTML = projects.map((project, index) => `
     <article class="project-card" style="--project-index: ${index}">
       <div class="project-card-top">
-        <span class="project-number">0${index + 1}</span>
-        <span class="project-category">${project.category}</span>
+        <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
+        <span class="project-category">${localized(project, 'category')}</span>
       </div>
       ${project.icon ? `<img class="project-icon" src="${project.icon}" alt="" loading="lazy" />` : ''}
-      <h3>${project.url ? `<a class="project-title-link" href="${project.url}">${project.name}<span aria-hidden="true"> ↗</span></a>` : project.name}</h3>
-      <p>${project.description}</p>
+      <h3>${project.url ? `<a class="project-title-link" href="${project.url}">${project.name}<span aria-hidden="true"> ↗</span></a>` : project.name}${statusLabels[project.status] ? ` <span class="project-status">${statusLabels[project.status]}</span>` : ''}</h3>
+      <p>${localized(project, 'description')}</p>
       <div class="project-tech">
         <span class="project-tech-label">${technologiesLabel}</span>
         <div class="tech-list">${getTechnologies(project.technologies).map((technology) => `<span>${technology}</span>`).join('')}</div>
@@ -277,20 +291,23 @@ function applyLanguage(lang) {
   });
 
   elements.forEach((element) => {
-    const key = element.getAttribute('data-i18n');
-    const path = key.split('.');
-    let value = selected;
-
-    for (const part of path) {
-      value = value && value[part];
-    }
+    const value = translate(selected, element.getAttribute('data-i18n'));
 
     if (typeof value === 'string') {
       element.textContent = value;
     }
   });
 
+  placeholders.forEach((element) => {
+    const value = translate(selected, element.getAttribute('data-i18n-placeholder'));
+
+    if (typeof value === 'string') {
+      element.setAttribute('placeholder', value);
+    }
+  });
+
   renderProjects(lang);
+  document.dispatchEvent(new CustomEvent('mbm:language', { detail: { lang } }));
 }
 
 if (navToggle && navPanel) {
