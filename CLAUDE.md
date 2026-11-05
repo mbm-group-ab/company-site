@@ -19,6 +19,7 @@ All UI strings live in the `translations` object in `script.js` (`en`, `fa`, `sv
 - The Sana widget renders replies with `textContent` only and keeps the chat in `sessionStorage` (per tab). The privacy page describes what is stored.
 
 ## Deploy
+- **Iranian domains** `mbm-family.ir` (ArvanCloud) and `mbm-computer.ir` (Cloudflare, another account): the same site from parvaz-ist (`/var/www/mbm-family`, nginx port 80, CDN does HTTPS). Publish with `bash deploy/static-sites/sync-ir.sh`. On any `.ir` host `script.js` shows Farsi only and removes the language switcher (owner's choice, 2026-11-05). Bump `script.js?v=` in `index.html` when script.js changes, or Arvan serves the cached copy.
 - A push to `main` only runs `await-approval` in `.github/workflows/deploy-vps.yml`; the owner's 🚀 in MBM Control sends `repository_dispatch` `deploy`, which copies the site to the VPS (ssh + tar, `static-sites` container).
 - `update-site.ps1` only checks that every catalog directory exists (no Firebase any more; deploy = the workflow, or `deploy/static-sites/sync.sh`).
 
