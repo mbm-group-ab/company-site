@@ -367,6 +367,13 @@ document.addEventListener('click', (event) => {
   }
 });
 
+// The Iranian domains (mbm-family.ir, mbm-computer.ir) are Farsi only, without the switcher.
+const isIranianDomain = /\.ir$/i.test(window.location.hostname);
 const storedLanguage = getStoredLanguage();
-applyLanguage(translations[storedLanguage] ? storedLanguage : 'en');
+if (isIranianDomain) {
+  document.querySelector('.lang-switcher')?.remove();
+  applyLanguage('fa');
+} else {
+  applyLanguage(translations[storedLanguage] ? storedLanguage : 'en');
+}
 loadProjects();
