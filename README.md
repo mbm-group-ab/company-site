@@ -5,6 +5,7 @@ A simple multilingual static company website for a software development business
 ## Included
 - English, Persian (Farsi), and Swedish language switcher
 - Responsive one-page layout
+- Sana can be saved to an iPhone home screen from Safari (Share → Add to Home Screen); it opens in a standalone window.
 - No build step required
 - Ready to upload to any static host
 

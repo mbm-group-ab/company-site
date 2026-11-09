@@ -1,0 +1,18 @@
+{
+  "name": "Sana",
+  "short_name": "Sana",
+  "start_url": "/#start",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#173050",
+  "description": "Sana, the MBM assistant and project guide.",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/all-projects/sana/logo.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ]
+}
