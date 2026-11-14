@@ -2,6 +2,7 @@
 # Host nginx terminates TLS per domain (vps-nginx/*.conf) and proxies here.
 services:
   static-sites:
+    mem_limit: 256m  # checkup 2026-11-14: ~2x peak use; a leak can't starve the VPS
     image: nginx:1.27-alpine
     container_name: static-sites
     restart: unless-stopped
