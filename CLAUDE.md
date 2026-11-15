@@ -4,7 +4,7 @@ Static MBM company site (English on .se, Farsi on the .ir domains, no switcher),
 
 ## Adding a project to the catalog
 1. Create `all-projects/<directory>/` with a `logo.png` (256x256).
-2. Add an object to `all-projects/projects.json` (`name`, `directory`, `icon`, `logo`, `category`, `description`, `url`, `repository`, `status`, `server`, `technologies`). Follow the existing entries. Write `category`/`description` in English and add `i18n.sv` and `i18n.fa` with the same two fields. `status`: `live`, `beta` or `coming-soon` (the last two show a pill on the card).
+2. Add an object to `all-projects/projects.json` (`name`, `directory`, `icon`, `logo`, `category`, `description`, `url`, `status`, `technologies`). Follow the existing entries. The file is public (the browser fetches it): no `server`, `repository` or deploy fields, no IPs, and no names of downloaders, scrapers or unofficial clients (yt-dlp, Baileys, "YouTube/Instagram/Spotify downloader"). Media Downloader / Nava stay out of the catalog (owner, 2026-11-15; app store review and Google search see this page). Write `category`/`description` in English and add `i18n.sv` and `i18n.fa` with the same two fields. `status`: `live`, `beta` or `coming-soon` (the last two show a pill on the card).
 3. Preview locally: `python -m http.server 8000` and open http://localhost:8000.
 
 ## Counts are derived automatically

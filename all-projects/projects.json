@@ -7,18 +7,7 @@
     "category": "Job search, fit analysis and cover letters (web, Telegram bot, Dordada One app)",
     "description": "Pishe finds jobs that fit you, tells you how well you match each one, and writes a cover letter that sounds like you. Use it on the web, as a Telegram bot with a daily digest, or in the Dordada One app; one MBM Account keeps your CV and applied list in sync.",
     "url": "https://job-finder.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/job-finder",
     "status": "live",
-    "lastDeployedVersion": "fbe0eeb",
-    "lastDeployedAt": "2026-08-25",
-    "server": {
-      "host": "job-finder.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux 8.9",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on push to master (git pull + docker compose up -d --build); backend/.env written from the BACKEND_ENV_FILE secret before each build",
-      "persistentData": "backend/data/ (TinyDB db.json, LinkedIn browser sessions, logs/app.log) — Docker-volume-mounted, survives redeploys"
-    },
     "technologies": {
       "frontend": [
         "React",
@@ -91,11 +80,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/dordada-one",
     "status": "beta",
-    "lastDeployedVersion": "73fd574",
-    "lastDeployedAt": "2026-11-04",
-    "server": {},
     "technologies": {
       "mobile": [
         "Flutter",
@@ -115,35 +100,24 @@
     "icon": "all-projects/dorsa/logo.png",
     "logo": "all-projects/dorsa/logo.png",
     "category": "A safe video library for small children",
-    "description": "Grown-ups pick the videos and channels; Dorsa checks, downloads and converts them, and the child plays only that list on the phone or straight on the TV. No ads, no endless feed, no surprises.",
+    "description": "Grown-ups pick the videos and channels; Dorsa checks them, and the child plays only that list on the phone or straight on the TV. No ads, no endless feed, no surprises.",
     "i18n": {
       "sv": {
         "category": "Ett tryggt videobibliotek för små barn",
-        "description": "Vuxna väljer videor och kanaler; Dorsa kontrollerar, hämtar och konverterar dem, och barnet spelar bara den listan i telefonen eller direkt på tv:n. Ingen reklam, inget ändlöst flöde, inga överraskningar."
+        "description": "Vuxna väljer videor och kanaler; Dorsa kontrollerar dem, och barnet spelar bara den listan i telefonen eller direkt på tv:n. Ingen reklam, inget ändlöst flöde, inga överraskningar."
       },
       "fa": {
         "category": "کتابخانهٔ ویدیوی امن برای کودکان خردسال",
-        "description": "بزرگ‌ترها ویدیوها و کانال‌ها را انتخاب می‌کنند؛ درسا آن‌ها را بررسی، دانلود و تبدیل می‌کند و کودک فقط همان فهرست را روی گوشی یا مستقیم روی تلویزیون می‌بیند. بی‌تبلیغ، بی‌فید بی‌پایان، بی‌غافلگیری."
+        "description": "بزرگ‌ترها ویدیوها و کانال‌ها را انتخاب می‌کنند؛ درسا آن‌ها را بررسی می‌کند و کودک فقط همان فهرست را روی گوشی یا مستقیم روی تلویزیون می‌بیند. بی‌تبلیغ، بی‌فید بی‌پایان، بی‌غافلگیری."
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/dorsa-library",
     "status": "live",
-    "lastDeployedVersion": "c8977a7",
-    "lastDeployedAt": "2026-11-03",
-    "server": {
-      "host": "dorsa.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
         "FastAPI",
         "SQLite",
-        "yt-dlp",
         "ffmpeg"
       ],
       "infra": [
@@ -174,17 +148,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/mahvare",
     "status": "live",
-    "lastDeployedVersion": "0c4a8b9",
-    "lastDeployedAt": "2026-10-29",
-    "server": {
-      "host": "lahze.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -220,17 +184,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/khoneh",
     "status": "beta",
-    "lastDeployedVersion": "9a0cc72",
-    "lastDeployedAt": "2026-10-24",
-    "server": {
-      "host": "khoneh.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -263,17 +217,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/goya",
     "status": "beta",
-    "lastDeployedVersion": "3ba14f5",
-    "lastDeployedAt": "2026-11-03",
-    "server": {
-      "host": "goya.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -308,17 +252,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/notes-api",
     "status": "beta",
-    "lastDeployedVersion": "0705aee",
-    "lastDeployedAt": "2026-11-03",
-    "server": {
-      "host": "daftar.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -352,17 +286,7 @@
       }
     },
     "url": "https://peyda.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/finder",
     "status": "live",
-    "lastDeployedVersion": "00cef8b",
-    "lastDeployedAt": "2026-11-02",
-    "server": {
-      "host": "peyda.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -387,18 +311,7 @@
     "category": "Photo and video date auditing tool",
     "description": "Scans a photo/video library and predicts which date Google Photos will sort each file under, flagging files with missing or mismatched EXIF dates before upload. Reads camera/lens details, exposure settings, resolution, and GPS location where available.",
     "url": "https://media-checker.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/media-checker",
     "status": "live",
-    "lastDeployedVersion": "ad54ccd",
-    "lastDeployedAt": "2026-08-27",
-    "server": {
-      "host": "media-checker.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on push to master (git pull or first-time git clone, then docker compose up -d --build)",
-      "persistentData": "none - stateless; uploads are scanned into a temp folder and discarded after each request"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -432,18 +345,7 @@
     "category": "Multi-broker portfolio and market analysis dashboard",
     "description": "Reads portfolio and market data across brokerages (Mofid, Avanza) into one dashboard, with momentum/rebound signal generation and a manual-confirm trading flow for Avanza that requires an explicit Confirm click per order — no automated order placement.",
     "url": "https://sahamyar.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/sahamyar",
     "status": "live",
-    "lastDeployedVersion": "f37182e",
-    "lastDeployedAt": "2026-08-30",
-    "server": {
-      "host": "sahamyar.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on push to main (git pull or first-time git clone, then docker compose up -d --build)",
-      "persistentData": "data/ (SQLite DB, Mofid/Avanza Playwright session state) — Docker-volume-mounted, survives redeploys; session files are seeded from an interactive local login since the server can't solve login captchas itself"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -484,14 +386,7 @@
     "category": "Cross-platform folder comparison and duplicate finder",
     "description": "A free, cross-platform GUI app that compares two folders recursively by file name and size and generates an HTML diff report, and scans any folder for duplicate files (by size + MD5 content hash) letting you review each duplicate group side by side — delete, rename, or move any copy right from the app.",
     "url": "https://duplicompare.mbm-group.se",
-    "repository": "https://github.com/mbm-group-ab/DupliCompare",
     "status": "live",
-    "server": {
-      "host": "duplicompare.mbm-group.se",
-      "reverseProxy": "Firebase Hosting",
-      "deploy": "GitHub Actions on push to main deploys the landing page to Firebase Hosting (site duplicompare); pushing a version tag (v*.*.*) builds and publishes the Windows/macOS/Linux executables to a GitHub Release",
-      "persistentData": "none - static landing page; app itself is a standalone desktop executable, no server-side state"
-    },
     "technologies": {
       "desktop": [
         "Python",
@@ -522,14 +417,7 @@
     "category": "Failing-disk imaging and exFAT file recovery toolchain",
     "description": "A free, open-source toolchain for imaging a damaged/failing disk sector by sector with retries and resume, then recovering exFAT files by parsing filesystem metadata directly (original names and folders, including deleted files), with signature-based carving as a fallback. A cross-platform GUI wraps the pipeline for Windows, macOS and Linux.",
     "url": "https://disk-recovery-tool.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/disk-recovery-tool",
     "status": "live",
-    "server": {
-      "host": "disk-recovery-tool.mbm-group.se",
-      "reverseProxy": "GitHub Pages",
-      "deploy": "GitHub Actions on push to main deploys the landing page via GitHub Pages; the same push bumps a patch version tag and publishes the Windows/macOS/Linux GUI executables to a GitHub Release",
-      "persistentData": "none - static landing page; the GUI is a standalone executable driving the recovery CLIs, no server-side state"
-    },
     "technologies": {
       "core": [
         "C++20",
@@ -558,60 +446,6 @@
     }
   },
   {
-    "name": "Media Downloader",
-    "directory": "media-downloader",
-    "icon": "all-projects/media-downloader/logo.png",
-    "logo": "all-projects/media-downloader/logo.png",
-    "category": "Multi-platform media downloader and forwarder",
-    "description": "Downloads video, audio, and photo posts from any yt-dlp-supported link (YouTube, Instagram, TikTok, X, and hundreds more) and delivers the file via a browser, a Telegram bot, or a WhatsApp group — with a multi-user WhatsApp sender where each visitor links their own account.",
-    "url": "https://media-downloader.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/media-downloader",
-    "status": "live",
-    "lastDeployedVersion": "46a4c3f",
-    "lastDeployedAt": "2026-09-16",
-    "server": {
-      "host": "media-downloader.mbm-group.se, media-sender.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on push to main (git pull or first-time git clone via a short-lived GitHub App installation token, then docker compose up -d --build)",
-      "persistentData": "runtime/sender/ (WhatsApp Baileys sessions + per-session contacts, one per linked browser) — Docker-volume-mounted, survives redeploys"
-    },
-    "technologies": {
-      "backend": [
-        "Python",
-        "Flask",
-        "gunicorn",
-        "python-telegram-bot",
-        "yt-dlp"
-      ],
-      "whatsapp": [
-        "Node.js",
-        "Express",
-        "Baileys"
-      ],
-      "integrations": [
-        "Telegram Bot API",
-        "WhatsApp Web (unofficial)"
-      ],
-      "infra": [
-        "Docker",
-        "Docker Compose",
-        "VPS"
-      ]
-    },
-    "i18n": {
-      "sv": {
-        "category": "Mediehämtare och vidarebefordran från många plattformar",
-        "description": "Hämtar video och musik från många plattformar och skickar dem vidare till Telegram eller WhatsApp; även musikdelen Nava i Dordada One."
-      },
-      "fa": {
-        "category": "دانلود و ارسال رسانه از پلتفرم‌های مختلف",
-        "description": "ویدیو و موسیقی را از پلتفرم‌های مختلف دانلود و به تلگرام یا واتساپ می‌فرستد؛ بخش موسیقی «نوا» در دردادا وان هم روی همین است."
-      }
-    }
-  },
-  {
     "name": "MBM Account",
     "directory": "mbm-account",
     "icon": "all-projects/mbm-account/logo.png",
@@ -629,17 +463,7 @@
       }
     },
     "url": "https://account.mbm-group.se/",
-    "repository": "https://github.com/mbm-group-ab/gateway",
     "status": "live",
-    "lastDeployedVersion": "774cfac",
-    "lastDeployedAt": "2026-11-03",
-    "server": {
-      "host": "account.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -671,17 +495,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/mbm-ai",
     "status": "live",
-    "lastDeployedVersion": "ed7f13b",
-    "lastDeployedAt": "2026-10-31",
-    "server": {
-      "host": "internal network",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -718,17 +532,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/messenger-app-hub",
     "status": "live",
-    "lastDeployedVersion": "4fca09e",
-    "lastDeployedAt": "2026-10-27",
-    "server": {
-      "host": "archive.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "backend": [
         "Python",
@@ -736,7 +540,7 @@
         "python-telegram-bot"
       ],
       "integrations": [
-        "WhatsApp (Baileys, linked device)",
+        "WhatsApp (linked device)",
         "Telegram Forum topics"
       ],
       "infra": [
@@ -763,11 +567,7 @@
       }
     },
     "url": "",
-    "repository": "",
     "status": "coming-soon",
-    "lastDeployedVersion": "44cd925",
-    "lastDeployedAt": "2026-10-22",
-    "server": {},
     "technologies": {
       "backend": [
         "Python",
@@ -798,17 +598,7 @@
       }
     },
     "url": "",
-    "repository": "https://github.com/mbm-group-ab/project-hub",
     "status": "live",
-    "lastDeployedVersion": "018c0ae",
-    "lastDeployedAt": "2026-11-04",
-    "server": {
-      "host": "hub.mbm-group.se",
-      "ip": "216.9.226.9",
-      "os": "AlmaLinux",
-      "reverseProxy": "nginx + Let's Encrypt (certbot)",
-      "deploy": "GitHub Actions on our own runners; every deploy waits for the owner's approval in MBM Control"
-    },
     "technologies": {
       "frontend": [
         "React",
@@ -843,11 +633,7 @@
       }
     },
     "url": "",
-    "repository": "",
     "status": "live",
-    "lastDeployedVersion": "6c7711e",
-    "lastDeployedAt": "2026-10-24",
-    "server": {},
     "technologies": {
       "infra": [
         "GitHub Actions",
@@ -867,11 +653,7 @@
     "category": "AI assistant",
     "description": "The chat assistant on this site: answers questions about MBM and its products, helps you describe a project and shows a rough price before you send a request.",
     "url": "https://mbm-group.se/#start",
-    "repository": "",
     "status": "beta",
-    "lastDeployedVersion": "",
-    "lastDeployedAt": "",
-    "server": {},
     "technologies": {
       "backend": [
         "Python",
