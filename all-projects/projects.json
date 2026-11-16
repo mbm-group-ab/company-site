@@ -68,15 +68,15 @@
     "icon": "all-projects/dordada-one/logo.png",
     "logo": "all-projects/dordada-one/logo.png",
     "category": "One app for the whole family: music, kids, live TV, home, notes, speech",
-    "description": "Dordada One brings MBM's services into a single mobile app with one sign-in. Each part can also ship as its own app: Dorsa for kids, Lahze for live TV, Khoneh for the smart home, Daftar for notes, Goya for speech and text, Nava for music and Pishe for jobs.",
+    "description": "Dordada One brings MBM's services into a single mobile app with one sign-in. Each part can also ship as its own app: Dorsa for kids, Lahze for live TV, Khoneh for the smart home, Daftar for notes, Goya for speech and text, Nava for music and Pishe for jobs. Its home also opens Chapar, MBM's private messenger, and Pishbini, a prediction game with points that have no money value; the account page shows credits and invite codes.",
     "i18n": {
       "sv": {
         "category": "En app för hela familjen: musik, barn, live-tv, hem, anteckningar, tal",
-        "description": "Dordada One samlar MBM:s tjänster i en enda mobilapp med en inloggning. Varje del kan också släppas som egen app: Dorsa för barn, Lahze för live-tv, Khoneh för smarta hemmet, Daftar för anteckningar, Goya för tal och text, Nava för musik och Pishe för jobb."
+        "description": "Dordada One samlar MBM:s tjänster i en enda mobilapp med en inloggning. Varje del kan också släppas som egen app: Dorsa för barn, Lahze för live-tv, Khoneh för smarta hemmet, Daftar för anteckningar, Goya för tal och text, Nava för musik och Pishe för jobb. Startsidan öppnar också Chapar, MBM:s privata budbärare, och Pishbini, ett tippningsspel med poäng utan penningvärde; kontosidan visar krediter och inbjudningskoder."
       },
       "fa": {
         "category": "یک اپ برای همهٔ خانواده: موسیقی، کودک، تلویزیون زنده، خانه، یادداشت، گفتار",
-        "description": "دردادا وان سرویس‌های MBM را با یک ورود در یک اپ موبایل جمع می‌کند. هر بخش می‌تواند اپ جداگانهٔ خودش هم باشد: درسا برای کودکان، لحظه برای تلویزیون زنده، خونه برای خانهٔ هوشمند، دفتر برای یادداشت، گویا برای گفتار و متن، نوا برای موسیقی و پیشه برای کار."
+        "description": "دردادا وان سرویس‌های MBM را با یک ورود در یک اپ موبایل جمع می‌کند. هر بخش می‌تواند اپ جداگانهٔ خودش هم باشد: درسا برای کودکان، لحظه برای تلویزیون زنده، خونه برای خانهٔ هوشمند، دفتر برای یادداشت، گویا برای گفتار و متن، نوا برای موسیقی و پیشه برای کار. از صفحهٔ اصلی آن چاپار، پیام‌رسان خصوصی MBM، و پیش‌بینی، بازی حدس نتیجه با امتیازهایی بدون ارزش پولی، هم باز می‌شوند؛ صفحهٔ حساب اعتبار و کد دعوت را نشان می‌دهد."
       }
     },
     "url": "",
