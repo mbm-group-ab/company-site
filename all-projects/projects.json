@@ -515,20 +515,20 @@
     }
   },
   {
-    "name": "WhatsApp Archive",
+    "name": "Peyk Archive",
     "directory": "whatsapp-archive",
     "icon": "all-projects/whatsapp-archive/logo.png",
     "logo": "all-projects/whatsapp-archive/logo.png",
-    "category": "Keeps every WhatsApp chat safe in a Telegram group, one topic per chat",
-    "description": "Link WhatsApp once by QR code and the archive bot copies every chat, history and new messages, with media and edits, into your own Telegram group, one topic per chat. Nothing is kept on our server after delivery.",
+    "category": "Keeps WhatsApp, Instagram, TikTok and Pinterest safe in Telegram, one group per app",
+    "description": "Link WhatsApp once by QR code and the archive bot copies every chat, history and new messages, with media and edits, into your own Telegram group, one topic per chat. Instagram (saved posts, collections, posts, stories, highlights, direct messages), TikTok and Pinterest join soon, each in its own group and kept up to date from the Dordada app. Nothing is kept on our server after delivery.",
     "i18n": {
       "sv": {
-        "category": "Sparar varje WhatsApp-chatt tryggt i en Telegram-grupp, ett ämne per chatt",
-        "description": "Koppla WhatsApp en gång med QR-kod så kopierar arkivboten varje chatt, historik och nya meddelanden, med media och redigeringar, till din egen Telegram-grupp med ett ämne per chatt. Inget sparas på vår server efter leverans."
+        "category": "Sparar WhatsApp, Instagram, TikTok och Pinterest tryggt i Telegram, en grupp per app",
+        "description": "Koppla WhatsApp en gång med QR-kod så kopierar arkivboten varje chatt, historik och nya meddelanden, med media och redigeringar, till din egen Telegram-grupp med ett ämne per chatt. Instagram (sparade inlägg, samlingar, inlägg, stories, höjdpunkter, direktmeddelanden), TikTok och Pinterest kommer snart, var och en i sin egen grupp och hålls uppdaterade från Dordada-appen. Inget sparas på vår server efter leverans."
       },
       "fa": {
-        "category": "همهٔ چت‌های واتساپ را در یک گروه تلگرام نگه می‌دارد، هر چت یک تاپیک",
-        "description": "یک بار واتساپ را با QR وصل کنید تا ربات آرشیو همهٔ چت‌ها را، چه گذشته چه پیام‌های تازه، با رسانه و ویرایش‌ها در گروه تلگرام خودتان کپی کند، هر چت در یک تاپیک. بعد از تحویل چیزی روی سرور ما نمی‌ماند."
+        "category": "واتساپ، اینستاگرام، تیک‌تاک و پینترست را در تلگرام نگه می‌دارد، هر اپ یک گروه",
+        "description": "یک بار واتساپ را با QR وصل کنید تا ربات آرشیو همهٔ چت‌ها را، چه گذشته چه پیام‌های تازه، با رسانه و ویرایش‌ها در گروه تلگرام خودتان کپی کند، هر چت در یک تاپیک. اینستاگرام (ذخیره‌ها، کالکشن‌ها، پست‌ها، استوری‌ها، هایلایت‌ها، دایرکت‌ها)، تیک‌تاک و پینترست به‌زودی اضافه می‌شوند، هر کدام در گروه خودش و همیشه به‌روز از طریق اپ دردادا. بعد از تحویل چیزی روی سرور ما نمی‌ماند."
       }
     },
     "url": "",
@@ -541,6 +541,7 @@
       ],
       "integrations": [
         "WhatsApp (linked device)",
+        "Instagram, TikTok, Pinterest",
         "Telegram Forum topics"
       ],
       "infra": [
