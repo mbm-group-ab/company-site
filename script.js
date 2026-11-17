@@ -55,6 +55,7 @@ const translations = {
     contactTitle: 'Let’s build something useful together.',
     contactText: 'Whether you need a better website, an app, or a complete digital product, we are ready to help.',
     emailLabel: 'Email us',
+    supportLabel: 'Support',
     footerNote: 'Built for growth, designed for people.'
   },
   fa: {
@@ -113,6 +114,7 @@ const translations = {
     contactTitle: 'بیایید چیزی مفید و کاربردی بسازیم.',
     contactText: 'چه وب‌سایت بهتری نیاز داشته باشید، چه اپلیکیشنی و چه یک محصول دیجیتال کامل، آماده کمک هستیم.',
     emailLabel: 'ایمیل ما',
+    supportLabel: 'پشتیبانی',
     footerNote: 'ساخته‌شده برای رشد، طراحی‌شده برای انسان‌ها.'
   },
   sv: {
@@ -171,6 +173,7 @@ const translations = {
     contactTitle: 'Låt oss bygga något användbart tillsammans.',
     contactText: 'Oavsett om du behöver en bättre webbplats, en app eller en komplett digital produkt är vi redo att hjälpa.',
     emailLabel: 'E-posta oss',
+    supportLabel: 'Support',
     footerNote: 'Byggt för tillväxt, designat för människor.'
   }
 };

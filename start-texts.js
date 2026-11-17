@@ -40,7 +40,7 @@ const startTranslations = {
         bad_email: 'Check the email address.',
         no_consent: 'Please tick the box so we may contact you.',
         rate_limited: 'Too many requests. Try again in a while.',
-        generic: 'Something went wrong. Email us at info@mbm-group.se instead.'
+        generic: 'Something went wrong. Email us at {info} instead.'
       }
     },
     sana: {
@@ -97,7 +97,7 @@ const startTranslations = {
         bad_email: 'Kontrollera e-postadressen.',
         no_consent: 'Kryssa i rutan så att vi får kontakta dig.',
         rate_limited: 'För många förfrågningar. Försök igen om en stund.',
-        generic: 'Något gick fel. Mejla oss på info@mbm-group.se i stället.'
+        generic: 'Något gick fel. Mejla oss på {info} i stället.'
       }
     },
     sana: {
@@ -154,7 +154,7 @@ const startTranslations = {
         bad_email: 'نشانی ایمیل را بررسی کنید.',
         no_consent: 'لطفاً گزینه را تیک بزنید تا بتوانیم با شما تماس بگیریم.',
         rate_limited: 'درخواست‌ها زیاد است. کمی بعد دوباره امتحان کنید.',
-        generic: 'مشکلی پیش آمد. لطفاً به info@mbm-group.se ایمیل بزنید.'
+        generic: 'مشکلی پیش آمد. لطفاً به {info} ایمیل بزنید.'
       }
     },
     sana: {

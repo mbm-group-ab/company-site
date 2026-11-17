@@ -10,6 +10,9 @@ Static MBM company site (English on .se, Farsi on the .ir domains, no switcher),
 ## Counts are derived automatically
 The hero stats ("N Products", "Products live X/Y") and the project cards are rendered by `script.js` from `projects.json` at runtime. Never hardcode counts in `index.html` or the translations. `status: "live"` counts toward the live figure.
 
+## Contact addresses
+All public emails live in `contact.js` (`CONTACT`: `se` for mbm-group.se, `ir` for mbm-family.ir and mbm-computer.ir, which both show the mbm-computer.ir addresses). Pages mark them with `data-mail="info"` / `"support"`; to add a kind (say `sales`), add it to both lists and put a `data-mail` link where it belongs. Never type an address into a page. Each address must exist as a Cloudflare Email Routing rule first (`plans/domains.md`).
+
 ## Translations
 All UI strings live in the `translations` object in `script.js` (`en`, `fa`, `sv`); the project form and Sana chat keep theirs in `start-texts.js`, merged into `translations` at load. Add every new key to all three. `data-i18n` sets text, `data-i18n-placeholder` sets a placeholder; `applyLanguage` fires `mbm:language`.
 

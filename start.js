@@ -76,7 +76,7 @@
 
   function showError(reason) {
     errorEl.hidden = false;
-    errorEl.textContent = text(`start.errors.${reason}`) || text('start.errors.generic');
+    errorEl.textContent = (text(`start.errors.${reason}`) || text('start.errors.generic')).replace('{info}', mbmMail('info'));
   }
 
   if (form) {

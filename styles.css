@@ -1210,3 +1210,7 @@ button.btn:disabled {
     width: 100%;
   }
 }
+
+.contact-details a + .contact-label {
+  margin-top: 16px;
+}
