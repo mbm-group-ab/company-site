@@ -309,7 +309,7 @@
     "icon": "all-projects/media-checker/logo.png",
     "logo": "all-projects/media-checker/logo.png",
     "category": "Photo and video date auditing tool",
-    "description": "Scans a photo/video library and predicts which date Google Photos will sort each file under, flagging files with missing or mismatched EXIF dates before upload. Reads camera/lens details, exposure settings, resolution, and GPS location where available.",
+    "description": "Predicts which date Google Photos will sort each photo or video under and flags missing or mismatched capture dates before upload. Checks run on your own device by default, in the browser or in the offline Android app, so nothing is uploaded; reports come as CSV or JSON, share-safe by default. Also reads camera, lens, exposure, resolution and GPS where available.",
     "url": "https://media-checker.mbm-group.se/",
     "status": "live",
     "technologies": {
@@ -320,6 +320,13 @@
         "gunicorn",
         "ffprobe (FFmpeg)"
       ],
+      "web": [
+        "JavaScript (Web Worker)"
+      ],
+      "mobile": [
+        "Flutter",
+        "Kotlin"
+      ],
       "infra": [
         "Docker",
         "Docker Compose",
@@ -329,11 +336,11 @@
     "i18n": {
       "sv": {
         "category": "Granskning av datum på foton och videor",
-        "description": "Hittar när ett foto eller en video egentligen togs, även när metadata saknas eller är fel, så att bilderna hamnar på rätt plats i Google Foto."
+        "description": "Förutser vilket datum Google Foto ger varje foto eller video och visar saknade eller felaktiga datum före uppladdning. Kontrollen körs på din egen enhet, i webbläsaren eller i Android-appen utan internet, så inget laddas upp."
       },
       "fa": {
         "category": "بررسی تاریخ عکس‌ها و ویدیوها",
-        "description": "زمان واقعی گرفتن هر عکس یا ویدیو را پیدا می‌کند، حتی وقتی متادیتا ندارد یا اشتباه است، تا عکس‌ها در گوگل فوتوز سر جای درستشان بنشینند."
+        "description": "پیش‌بینی می‌کند گوگل فوتوز هر عکس یا ویدیو را زیر چه تاریخی می‌گذارد و تاریخ‌های گم‌شده یا اشتباه را پیش از آپلود نشان می‌دهد. بررسی روی دستگاه خود شما انجام می‌شود، در مرورگر یا در اپ اندروید بدون اینترنت، پس چیزی آپلود نمی‌شود."
       }
     }
   },
@@ -384,7 +391,7 @@
     "icon": "all-projects/duplicompare/logo.png",
     "logo": "all-projects/duplicompare/logo.png",
     "category": "Cross-platform folder comparison and duplicate finder",
-    "description": "A free, cross-platform GUI app that compares two folders recursively by file name and size and generates an HTML diff report, and scans any folder for duplicate files (by size + MD5 content hash) letting you review each duplicate group side by side — delete, rename, or move any copy right from the app.",
+    "description": "A free desktop app for Windows, macOS and Linux that compares two folders, quickly by name and size or verified by reading the contents, and finds duplicate files across any number of folders. Review each duplicate group side by side and move a copy to a quarantine you can restore from, or delete, move or rename it, always after a fresh check. HTML and JSON reports; English, Svenska and Farsi.",
     "url": "https://duplicompare.mbm-group.se",
     "status": "live",
     "technologies": {
@@ -401,11 +408,11 @@
     "i18n": {
       "sv": {
         "category": "Mappjämförelse och dubblettsökning för alla plattformar",
-        "description": "Jämför två mappar eller diskar och hittar dubbletter snabbt, med ett enkelt grafiskt gränssnitt för Windows, macOS och Linux."
+        "description": "Jämför två mappar, snabbt eller verifierat genom att läsa innehållet, och hittar dubbletter. Kopior kan flyttas till en karantän som går att återställa. För Windows, macOS och Linux, på engelska, svenska och persiska."
       },
       "fa": {
         "category": "مقایسهٔ پوشه‌ها و یافتن فایل‌های تکراری روی همهٔ سیستم‌عامل‌ها",
-        "description": "دو پوشه یا دیسک را مقایسه می‌کند و فایل‌های تکراری را سریع پیدا می‌کند، با رابط گرافیکی ساده برای ویندوز، مک و لینوکس."
+        "description": "دو پوشه را سریع یا با خواندن محتوا مقایسه می‌کند و فایل‌های تکراری را پیدا می‌کند. نسخه‌های اضافه را می‌توان به قرنطینه‌ای برد که قابل بازگرداندن است. برای ویندوز، مک و لینوکس، به انگلیسی، سوئدی و فارسی."
       }
     }
   },
@@ -414,8 +421,8 @@
     "directory": "disk-recovery-tool",
     "icon": "all-projects/disk-recovery-tool/logo.png",
     "logo": "all-projects/disk-recovery-tool/logo.png",
-    "category": "Failing-disk imaging and exFAT file recovery toolchain",
-    "description": "A free, open-source toolchain for imaging a damaged/failing disk sector by sector with retries and resume, then recovering exFAT files by parsing filesystem metadata directly (original names and folders, including deleted files), with signature-based carving as a fallback. A cross-platform GUI wraps the pipeline for Windows, macOS and Linux.",
+    "category": "Failing-disk imaging and exFAT file recovery for Windows",
+    "description": "A free, open-source Windows toolchain for imaging a damaged or failing disk sector by sector with retries and resume, then recovering exFAT files by parsing filesystem metadata directly (original names and folders, including deleted files), with signature-based carving as a fallback. It only ever reads the source disk. A graphical front-end in English, Svenska and Farsi runs each stage and shows the exact command it uses.",
     "url": "https://disk-recovery-tool.mbm-group.se/",
     "status": "live",
     "technologies": {
@@ -430,18 +437,19 @@
         "PyInstaller"
       ],
       "infra": [
-        "GitHub Pages",
+        "Docker",
+        "VPS",
         "GitHub Actions"
       ]
     },
     "i18n": {
       "sv": {
-        "category": "Avbildning av trasiga diskar och filåterställning från exFAT",
-        "description": "En verktygskedja som säkert avbildar en trasig disk och räddar filer från ett skadat exFAT-filsystem, steg för steg."
+        "category": "Avbildning av trasiga diskar och filåterställning från exFAT för Windows",
+        "description": "En verktygskedja för Windows som försiktigt avbildar en trasig disk och räddar filer från ett skadat exFAT-filsystem, steg för steg. Källdisken läses bara, den skrivs aldrig till."
       },
       "fa": {
-        "category": "تصویربرداری از دیسک‌های خراب و بازیابی فایل از exFAT",
-        "description": "زنجیره‌ای از ابزارها که از دیسک خراب با احتیاط تصویر می‌گیرد و فایل‌ها را از فایل‌سیستم exFAT آسیب‌دیده، قدم‌به‌قدم نجات می‌دهد."
+        "category": "تصویربرداری از دیسک‌های خراب و بازیابی فایل از exFAT برای ویندوز",
+        "description": "زنجیره‌ای از ابزارها برای ویندوز که از دیسک خراب با احتیاط تصویر می‌گیرد و فایل‌ها را از فایل‌سیستم exFAT آسیب‌دیده، قدم‌به‌قدم نجات می‌دهد. روی دیسک اصلی هرگز چیزی نوشته نمی‌شود."
       }
     }
   },
