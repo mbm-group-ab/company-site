@@ -309,7 +309,7 @@
     "icon": "all-projects/media-checker/logo.png",
     "logo": "all-projects/media-checker/logo.png",
     "category": "Photo and video date auditing tool",
-    "description": "Predicts which date Google Photos will sort each photo or video under and flags missing or mismatched capture dates before upload. Checks run on your own device by default, in the browser or in the offline Android app, so nothing is uploaded; reports come as CSV or JSON, share-safe by default. Also reads camera, lens, exposure, resolution and GPS where available.",
+    "description": "Predicts which date Google Photos will sort each photo or video under and flags missing or mismatched capture dates before upload. Checks run on your own device by default, in the browser or in Negar, the offline Android app, so nothing is uploaded; reports come as CSV or JSON, share-safe by default. Negar also lists the phone's photos with thumbnails, sorts and filters them, shows them on an offline map and by town, and lets you tag people and places, all kept on the phone. Also reads camera, lens, exposure, resolution and GPS where available.",
     "url": "https://media-checker.mbm-group.se/",
     "status": "live",
     "technologies": {
@@ -336,11 +336,11 @@
     "i18n": {
       "sv": {
         "category": "Granskning av datum på foton och videor",
-        "description": "Förutser vilket datum Google Foto ger varje foto eller video och visar saknade eller felaktiga datum före uppladdning. Kontrollen körs på din egen enhet, i webbläsaren eller i Android-appen utan internet, så inget laddas upp."
+        "description": "Förutser vilket datum Google Foto ger varje foto eller video och visar saknade eller felaktiga datum före uppladdning. Kontrollen körs på din egen enhet, i webbläsaren eller i Negar, Android-appen utan internet, så inget laddas upp. Negar visar också telefonens bilder med miniatyrer, sorterar och filtrerar dem, visar dem på en offlinekarta och per ort och låter dig tagga personer och platser, allt i telefonen."
       },
       "fa": {
         "category": "بررسی تاریخ عکس‌ها و ویدیوها",
-        "description": "پیش‌بینی می‌کند گوگل فوتوز هر عکس یا ویدیو را زیر چه تاریخی می‌گذارد و تاریخ‌های گم‌شده یا اشتباه را پیش از آپلود نشان می‌دهد. بررسی روی دستگاه خود شما انجام می‌شود، در مرورگر یا در اپ اندروید بدون اینترنت، پس چیزی آپلود نمی‌شود."
+        "description": "پیش‌بینی می‌کند گوگل فوتوز هر عکس یا ویدیو را زیر چه تاریخی می‌گذارد و تاریخ‌های گم‌شده یا اشتباه را پیش از آپلود نشان می‌دهد. بررسی روی دستگاه خود شما انجام می‌شود، در مرورگر یا در نگار، اپ اندروید بدون اینترنت، پس چیزی آپلود نمی‌شود. نگار همچنین عکس‌های گوشی را با تصویر کوچک فهرست می‌کند، مرتب و فیلتر می‌کند، روی نقشه‌ی آفلاین و بر اساس شهر نشان می‌دهد و می‌گذارد آدم‌ها و مکان‌ها را برچسب بزنید؛ همه روی گوشی می‌ماند."
       }
     }
   },
